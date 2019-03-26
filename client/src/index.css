@@ -11,3 +11,7 @@ body {
   padding: 0;
   font-family: 'Roboto Condensed', sans-serif;
 }
+
+.content {
+  margin: 0 1em;
+}

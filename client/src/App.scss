@@ -1,3 +1,4 @@
+$peach: rgb(253, 156, 110);
 /*
 ██████╗ ████████╗███╗   ██╗
 ██╔══██╗╚══██╔══╝████╗  ██║
@@ -7,8 +8,10 @@
 ╚═════╝    ╚═╝   ╚═╝  ╚═══╝
 */
 
+
+
 .btn {
-  background-color: rgb(253, 156, 110);
+  background-color: $peach;
   color: white;
   border-radius: 1000000px;
   padding: 1em 2em;
@@ -25,11 +28,18 @@
 */
 
 [data-route="/"] {
+  // display: flex;
+  // align-items: center;
   min-height: 100vh;
-  overflow: hidden;
-  background-image: url("./images/86258464_l.jpg");
-  background-size: cover;
-  text-align: center;
+
+  .homepage {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url("./images/86258464_l.jpg");
+    background-size: cover;
+    text-align: center;
+  }
 
   .btn {
     display: block;
@@ -43,12 +53,16 @@
     margin-bottom: 1em;
   }
 
-  h1 {
-    @font-face {
-      font-family: 'Between3';
-      src: url(./fonts/Between3-Bold.otf) format("truetype");
-    }
+  p {
+    margin-bottom: 4em;
+    margin-top: 2em;
+    font-size: 20px;
   }
+
+  .container {
+    margin-top: 12em;
+  }
+
 }
 
 
