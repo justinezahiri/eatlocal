@@ -21,10 +21,10 @@ class Search extends Component {
                 name="number-of-guests"
                 placeholder="Number of guests"
               />
+              <button className="btn" type="submit" name="search">
+                Find a host
+              </button>
             </form>
-            <button className="btn" type="search" name="search">
-              Find a host
-            </button>
           </div>
         </div>
       </div>

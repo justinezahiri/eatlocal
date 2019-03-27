@@ -13,10 +13,10 @@ class Login extends Component {
             <form>
               <input type="name" name="name" placeholder="Name" />
               <input type="password" name="password" placeholder="Password" />
+              <button className="btn" type="submit" name="login">
+                Login
+              </button>
             </form>
-            <button className="btn" type="submit" name="login">
-              Login
-            </button>
             <p>
               <small>
                 If you don't have an account yet, you can create your account{" "}

@@ -15,11 +15,10 @@ class Signup extends Component {
               <input type="number" name="phone" placeholder="Phone" />
               <input type="email" name="email" placeholder="Email" />
               <input type="password" name="password" placeholder="Password" />
+              <button className="btn" type="submit" name="create">
+                Create the account
+              </button>
             </form>
-
-            <button className="btn" type="submit" name="create">
-              Create the account
-            </button>
             <p>
               <small>
                 If you already have an account, you can login from{" "}
