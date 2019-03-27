@@ -19,7 +19,6 @@ $beige: #f5f0ee;
   padding: 16px 32px;
   text-align: center;
   border-style: none;
-
   display: block;
 
   @media (min-width: 900px) {
@@ -48,6 +47,10 @@ $beige: #f5f0ee;
     text-align: center;
   }
 
+  .btn {
+    background-color: rgba(253, 156, 110, 0.8);
+  }
+
   .btn.signup {
     margin-bottom: 1em;
   }
@@ -66,12 +69,12 @@ $beige: #f5f0ee;
 
 
 /*
-██╗      ██████╗  ██████╗ ██╗███╗   ██╗    ██╗███████╗██╗ ██████╗ ███╗   ██╗██╗   ██╗██████╗ 
-██║     ██╔═══██╗██╔════╝ ██║████╗  ██║   ██╔╝██╔════╝██║██╔════╝ ████╗  ██║██║   ██║██╔══██╗
-██║     ██║   ██║██║  ███╗██║██╔██╗ ██║  ██╔╝ ███████╗██║██║  ███╗██╔██╗ ██║██║   ██║██████╔╝
-██║     ██║   ██║██║   ██║██║██║╚██╗██║ ██╔╝  ╚════██║██║██║   ██║██║╚██╗██║██║   ██║██╔═══╝ 
-███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║██╔╝   ███████║██║╚██████╔╝██║ ╚████║╚██████╔╝██║     
-╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═╝    ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝ 
+███████╗██╗ ██████╗ ███╗   ██╗██╗   ██╗██████╗ 
+██╔════╝██║██╔════╝ ████╗  ██║██║   ██║██╔══██╗
+███████╗██║██║  ███╗██╔██╗ ██║██║   ██║██████╔╝
+╚════██║██║██║   ██║██║╚██╗██║██║   ██║██╔═══╝ 
+███████║██║╚██████╔╝██║ ╚████║╚██████╔╝██║     
+╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝ 
 */
 
 [data-route="/login"],
@@ -96,6 +99,12 @@ $beige: #f5f0ee;
       display: inline-block;
     }
   }
+
+  .btn {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2em;
+  }
 }
 
 /*
@@ -114,6 +123,7 @@ $beige: #f5f0ee;
 
 .navbar-link {
   text-decoration: none;
+  color: white;
   margin: 1em;
 }
 
@@ -126,6 +136,8 @@ $beige: #f5f0ee;
 ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝
 */
 [data-route="/search"] {
+  min-height: 100vh;
+  overflow: hidden;
   text-align: center;
 
   input {
@@ -135,5 +147,21 @@ $beige: #f5f0ee;
     padding: 1em;
     padding-right: 12em;
     margin: 1.5em;
+
+    @media (min-width: 900px) {
+      display: inline-block;
+    }
+  }
+
+  p {
+    font-weight: bold;
+    font-size: larger;
+    margin-bottom: 3em;
+  }
+
+  .btn {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2em;
   }
 }

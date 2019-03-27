@@ -16,6 +16,7 @@ class Signup extends Component {
               <input type="email" name="email" placeholder="Email" />
               <input type="password" name="password" placeholder="Password" />
             </form>
+
             <button className="btn" type="submit" name="create">
               Create the account
             </button>
