@@ -1,6 +1,35 @@
+/*
+ ██████╗ ██████╗ ██╗      ██████╗ ██████╗ ███████╗
+██╔════╝██╔═══██╗██║     ██╔═══██╗██╔══██╗██╔════╝
+██║     ██║   ██║██║     ██║   ██║██████╔╝███████╗
+██║     ██║   ██║██║     ██║   ██║██╔══██╗╚════██║
+╚██████╗╚██████╔╝███████╗╚██████╔╝██║  ██║███████║
+ ╚═════╝ ╚═════╝ ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+*/
 $peach: rgb(253, 156, 110);
 $blue: #343a54;
 $beige: #f5f0ee;
+
+/* 
+██╗███╗   ██╗██████╗ ██╗   ██╗████████╗
+██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝
+██║██╔██╗ ██║██████╔╝██║   ██║   ██║   
+██║██║╚██╗██║██╔═══╝ ██║   ██║   ██║   
+██║██║ ╚████║██║     ╚██████╔╝   ██║   
+╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝    ╚═╝   
+*/
+input {
+  border-radius: 1000000px;
+  border-style: none;
+  display: block;
+  padding: 1em;
+  padding-right: 12em;
+  margin: 1.5em;
+
+  @media (min-width: 900px) {
+    display: inline-block;
+  }
+}
 
 /*
 ██████╗ ████████╗███╗   ██╗
@@ -34,7 +63,6 @@ $beige: #f5f0ee;
 ██║  ██║╚██████╔╝██║ ╚═╝ ██║███████╗
 ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝
 */
-
 [data-route="/"] {
   min-height: 100vh;
 
@@ -64,9 +92,7 @@ $beige: #f5f0ee;
   .container {
     margin-top: 12em;
   }
-
 }
-
 
 /*
 ███████╗██╗ ██████╗ ███╗   ██╗██╗   ██╗██████╗ 
@@ -76,7 +102,6 @@ $beige: #f5f0ee;
 ███████║██║╚██████╔╝██║ ╚████║╚██████╔╝██║     
 ╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝ 
 */
-
 [data-route="/login"],
 [data-route="/register"] {
   min-height: 100vh;
@@ -85,19 +110,6 @@ $beige: #f5f0ee;
 
   h1 {
     margin: 1.5em;
-  }
-
-  input {
-    border-radius: 1000000px;
-    border-style: none;
-    display: block;
-    padding: 1em;
-    padding-right: 12em;
-    margin: 1.5em;
-
-    @media (min-width: 900px) {
-      display: inline-block;
-    }
   }
 
   .btn {
@@ -139,19 +151,6 @@ $beige: #f5f0ee;
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
-
-  input {
-    border-radius: 1000000px;
-    border-style: none;
-    display: block;
-    padding: 1em;
-    padding-right: 12em;
-    margin: 1.5em;
-
-    @media (min-width: 900px) {
-      display: inline-block;
-    }
-  }
 
   p {
     font-weight: bold;
