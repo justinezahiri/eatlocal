@@ -2,8 +2,13 @@
 :before,
 :after {
   box-sizing: border-box;
-  color: #343A54;
+  color: #343a54;
   /* background-color: #FBFAF8; */
+
+}
+
+*:focus {
+  outline: none;
 }
 
 body {
@@ -14,4 +19,11 @@ body {
 
 .content {
   margin: 0 1em;
+}
+
+.page-content {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #f5f0ee;
 }

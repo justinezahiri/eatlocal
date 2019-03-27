@@ -1,4 +1,7 @@
 $peach: rgb(253, 156, 110);
+$blue: #343a54;
+$beige: #f5f0ee;
+
 /*
 ██████╗ ████████╗███╗   ██╗
 ██╔══██╗╚══██╔══╝████╗  ██║
@@ -8,14 +11,20 @@ $peach: rgb(253, 156, 110);
 ╚═════╝    ╚═╝   ╚═╝  ╚═══╝
 */
 
-
-
 .btn {
   background-color: $peach;
   color: white;
+  font-weight: bold;
   border-radius: 1000000px;
-  padding: 1em 2em;
+  padding: 16px 32px;
   text-align: center;
+  border-style: none;
+
+  display: block;
+
+  @media (min-width: 900px) {
+    display: inline-block;
+  }
 }
 
 /*
@@ -28,25 +37,15 @@ $peach: rgb(253, 156, 110);
 */
 
 [data-route="/"] {
-  // display: flex;
-  // align-items: center;
   min-height: 100vh;
 
   .homepage {
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
-    background-image: url("./images/86258464_l.jpg");
+    background-image: url("./images/backgroundHome.jpg");
     background-size: cover;
     text-align: center;
-  }
-
-  .btn {
-    display: block;
-
-    @media (min-width: 900px) {
-      display: inline-block;
-    }
   }
 
   .btn.signup {
@@ -54,7 +53,7 @@ $peach: rgb(253, 156, 110);
   }
 
   p {
-    margin-bottom: 4em;
+    margin-bottom: 3em;
     margin-top: 2em;
     font-size: 20px;
   }
@@ -81,8 +80,21 @@ $peach: rgb(253, 156, 110);
   overflow: hidden;
   text-align: center;
 
+  h1 {
+    margin: 1.5em;
+  }
+
   input {
     border-radius: 1000000px;
+    border-style: none;
+    display: block;
+    padding: 1em;
+    padding-right: 12em;
+    margin: 1.5em;
+
+    @media (min-width: 900px) {
+      display: inline-block;
+    }
   }
 }
 
@@ -95,10 +107,14 @@ $peach: rgb(253, 156, 110);
 ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                                       
 */
 .Navbar {
-  background-color: rgb(253, 156, 110);
+  background-color: $peach;
   display: flex;
-  padding: 16px;
-  color: white;
+  padding: 0.5em;
+}
+
+.navbar-link {
+  text-decoration: none;
+  margin: 1em;
 }
 
 /*
@@ -114,5 +130,10 @@ $peach: rgb(253, 156, 110);
 
   input {
     border-radius: 1000000px;
+    border-style: none;
+    display: block;
+    padding: 1em;
+    padding-right: 12em;
+    margin: 1.5em;
   }
 }
