@@ -49,7 +49,7 @@ class App extends Component {
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/search" component={Search} />
               <Route exact path="/results" component={EventsList} />
-              <Route exact path="/eventsdetail" component={EventDetail} />
+              <Route exact path="/eventdetail" component={EventDetail} />
               <Route exact path="/sent" component={Sent} />
             </Switch>
           </div>

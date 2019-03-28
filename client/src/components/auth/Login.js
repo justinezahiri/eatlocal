@@ -8,7 +8,7 @@ class Login extends Component {
       <div>
         <Navbar />
         <div className="page-content">
-          <h1>login</h1>
+          <h1>Login</h1>
           <div className="content">
             <form>
               <input type="name" name="name" placeholder="Name" />

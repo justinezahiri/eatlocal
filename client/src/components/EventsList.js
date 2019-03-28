@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
+import hostImage from "../images/hostPlaceholder.png";
 
 class EventsList extends Component {
   render() {
@@ -18,35 +19,45 @@ class EventsList extends Component {
           </div>
 
           <div className="events-list">
-            <div className="event-card">
+            <div className="card">
+              <div className="image-cropper">
+                <img src={hostImage} alt="host" />
+              </div>
               <img
                 className="meal-image"
                 src="https://imageresizer.static9.net.au/E3mzajh1nmw-FEX6ifOOldX1v4Q=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2017%2F05%2F02%2F16%2F51%2FBeef-kofta-wrap-with-tahini-sauce-by-Matters-of-the-Belly_2.jpg"
                 alt="meal"
               />
-              <h2>Fatene Tanous</h2>
-              <p>Specialities:Lorem ipsum dolor sit amet</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
-                ut convallis ante.{" "}
-              </p>
+              <div className="event-card">
+                <h2>Fatene Tanous</h2>
+                <p>Specialities:Lorem ipsum dolor sit amet</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
+                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
+                  ut convallis ante.{" "}
+                </p>
+              </div>
             </div>
-            <div className="event-card">
+            <div className="card">
+              <div className="image-cropper">
+                <img src={hostImage} alt="host" />
+              </div>
               <img
                 className="meal-image"
-                src="https://eluxemagazine.com/wp-content/uploads/2016/11/middle-eastern-dishes-e1480334360515.jpg"
+                src="https://imageresizer.static9.net.au/E3mzajh1nmw-FEX6ifOOldX1v4Q=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2017%2F05%2F02%2F16%2F51%2FBeef-kofta-wrap-with-tahini-sauce-by-Matters-of-the-Belly_2.jpg"
                 alt="meal"
               />
-              <h2>Marwan Sam</h2>
-              <p>Specialities:Lorem ipsum dolor sit amet</p>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
-                ut convallis ante.{" "}
-              </p>
+              <div className="event-card">
+                <h2>Fatene Tanous</h2>
+                <p>Specialities:Lorem ipsum dolor sit amet</p>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
+                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
+                  ut convallis ante.{" "}
+                </p>
+              </div>
             </div>
             <button className="btn">Back to top</button>
           </div>

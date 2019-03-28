@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import pin from "../images/Eatlocal pin.png";
 import dropdownIcon from "../images/dropdownIcon.png";
 
 class Navbar extends Component {
@@ -10,7 +9,7 @@ class Navbar extends Component {
         <ul>
           <li>
             <Link to="/">
-              <img src={pin} alt="pin" />
+              <img className="logo" src="./images/logoEatlocal.svg" alt="logo" />
             </Link>
           </li>
           <li>

@@ -24,8 +24,8 @@ input {
   border-style: none;
   display: block;
   padding: 1em;
-  padding-right: 12em;
-  margin: 1.5em;
+  width: 100%;
+  margin-bottom: 1.5em;
 
   @media (min-width: 900px) {
     display: inline-block;
@@ -50,10 +50,64 @@ input {
   text-align: center;
   border-style: none;
   display: block;
+  width: 100%;
 
   @media (min-width: 900px) {
     display: inline-block;
   }
+}
+
+//set titles 
+.content {
+  margin: 0 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #f5f0ee;
+}
+
+
+$w: 100px;
+
+.card {
+  width: 292px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  margin-top: ($w/2);
+}
+/*For rounding host image */
+.image-cropper {
+  width: $w;
+  height: $w;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-($w/2), -($w/2));
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px white solid;
+
+  img {
+    width:100%;height:100%; object-fit:cover;
+  }
+}
+
+
+.hostImg {
+  display: inline;
+  margin: 0 auto;
+  height: 100px;
+  width: auto;
 }
 
 /*
@@ -133,19 +187,37 @@ input {
   display: flex;
   padding: 0.5em;
 
+  .logo {
+    height: 1.3em;
+    display: block;
+  }
+
+  a {
+    display: block;
+  }
+
   ul {
     list-style: none;
     margin: 0;
     padding-left: 0;
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+
   }
 
   li {
     display: block;
-    float: left;
-    padding: 1rem;
+    ffloat: left;
+    ppadding: 1rem;
     position: relative;
     text-decoration: none;
     transition-duration: 0.5s;
+  }
+
+  li:nth-child(2) {
+    margin-left: auto;
   }
 
   li:hover {
@@ -206,30 +278,31 @@ input {
   }
 
   .btn {
-    position: fixed;
     bottom: 0;
     margin-bottom: 2em;
   }
 
-  input[type='text'] {
-    background-image: url(./images/Loup-icon.png);
-    background-position: 7px 7px;
+  input[type="text"],
+  input[type="date"],
+  input[type="number"] {
+    background-position: 1em center;
     background-repeat: no-repeat;
     text-align: center;
+    background-size: 1.5em;
   }
 
-  input[type='date'] {
+  input[type="text"] {
+    background-image: url(./images/Loup-icon.png);
+  }
+
+  input[type="date"] {
     background-image: url(./images/calendar-icon.png);
-    background-position: 7px 7px;
-    background-repeat: no-repeat;
-    text-align: right;
+
+    background-color: white;
   }
 
-  input[type='number'] {
+  input[type="number"] {
     background-image: url(./images/travelers-icon.png);
-    background-position: 7px 7px;
-    background-repeat: no-repeat;
-    text-align: right;
   }
 }
 
@@ -242,7 +315,6 @@ input {
 ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝   ╚══════╝    ╚══════╝╚═╝╚══════╝   ╚═╝   
 */
 [data-route="/results"] {
-
   .events-list {
     display: flex;
     flex-direction: column;
@@ -253,7 +325,6 @@ input {
   li {
     list-style: none;
     display: list-item;
-
   }
 
   li.search-city {
@@ -265,7 +336,7 @@ input {
   }
 
   li.search-meal {
-    list-style-image: url(./images/calendar-icon.png);
+    list-style-image: url(./images/clockIcon1.png);
   }
 
   li.search-guests {
@@ -273,10 +344,6 @@ input {
   }
 
   .event-card {
-    width: 292px;
-    height: 431px;
-    border-radius: 10px;
-    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
 
     p {
@@ -291,9 +358,62 @@ input {
   }
 
   .meal-image {
-    width: 292px;
     height: 158px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    width: 100%;
+    object-fit: cover;
   }
+}
+
+
+/*
+███████╗██╗   ██╗███████╗███╗   ██╗████████╗    ██████╗ ███████╗████████╗ █████╗ ██╗██╗     
+██╔════╝██║   ██║██╔════╝████╗  ██║╚══██╔══╝    ██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██║██║     
+█████╗  ██║   ██║█████╗  ██╔██╗ ██║   ██║       ██║  ██║█████╗     ██║   ███████║██║██║     
+██╔══╝  ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║   ██║       ██║  ██║██╔══╝     ██║   ██╔══██║██║██║     
+███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║       ██████╔╝███████╗   ██║   ██║  ██║██║███████╗
+╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝       ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝
+*/
+[data-route="/eventdetail"] {
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+
+  .meal-image-detail {
+    width: 320px;
+    height: 276px;
+  }
+
+  h2 {
+    text-align: left;
+  }
+
+  p {
+    text-align: center;
+    color: #4b4b4b;
+    font-size: 13px;
+  }
+
+  .specialities-card {
+    width: 292px;
+    height: 431px;
+    border-radius: 10px;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+  }
+
+  .button-card {
+    width: 292px;
+    height: 114px;
+    border-radius: 10px;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+
+    hr {
+      color: #909090;
+      opacity: 0.5;
+    }
+  }
+
 }

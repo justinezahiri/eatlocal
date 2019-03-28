@@ -8,13 +8,16 @@ class Signup extends Component {
       <div>
         <Navbar />
         <div className="page-content">
-          <h1>signup</h1>
+          <h1>Signup</h1>
           <div className="content">
+            
             <form>
-              <input type="name" name="name" placeholder="Name" />
-              <input type="number" name="phone" placeholder="Phone" />
-              <input type="email" name="email" placeholder="Email" />
-              <input type="password" name="password" placeholder="Password" />
+              <div>
+                <input type="name" name="name" placeholder="Name" />
+                <input type="number" name="phone" placeholder="Phone" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+              </div>      
               <button className="btn" type="submit" name="create">
                 Create the account
               </button>
