@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import pin from "../images/Eatlocal pin.png";
-import dropdownIcon from "../images/30x30.png";
+import dropdownIcon from "../images/dropdownIcon.png";
 
 class Navbar extends Component {
   render() {

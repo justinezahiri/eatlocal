@@ -140,7 +140,6 @@ input {
   }
 
   li {
-    color: #fff;
     display: block;
     float: left;
     padding: 1rem;
@@ -150,7 +149,7 @@ input {
   }
 
   li:hover {
-    background: $peach;
+    // background: $beige;
     cursor: pointer;
   }
 
@@ -168,7 +167,6 @@ input {
 
   ul li:hover>ul,
   ul li:focus-within>ul,
-  /* this is the line we add */
   ul li ul:hover {
     visibility: visible;
     opacity: 1;
