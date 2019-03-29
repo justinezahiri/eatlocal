@@ -431,9 +431,23 @@ input {
   overflow: hidden;
   text-align: center;
 
+  .content {
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
   .meal-image-detail {
-    width: 320px;
+    width: fit-content;
     height: 276px;
+    object-fit: cover;
+  }
+
+  .image-cropper {
+    transform: translate(60px, 240px);
+    left: 50%;
+    top: 0;
+    position: absolute;
   }
 
   h2 {
@@ -447,23 +461,29 @@ input {
   }
 
   .specialities-card {
-    width: 292px;
+    width: auto;
     height: 431px;
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
+    margin-bottom: 2em;
   }
 
   .button-card {
-    width: 292px;
-    height: 114px;
+    display: flex;
+    width: auto;
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
+    margin-bottom: 2em;
 
     hr {
       color: #909090;
       opacity: 0.5;
+    }
+
+    .btn {
+      width: 50%;
     }
   }
 }

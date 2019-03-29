@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.scss";
 
-import { Link, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/HomePage.js";
 import Signup from "./components/auth/Signup.js";

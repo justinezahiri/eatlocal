@@ -34,8 +34,18 @@ class EventDetail extends Component {
             <img src={"/images/messageicon.svg"} alt="ask" />
           </div>
           <div className="button-card">
+            <img src={"/images/travelersicon.svg"} alt="travelers" />
             <p>number of guests</p>
+            <button>
+              <img src={"/images/addicon.svg"} alt="add" />
+            </button>
+            <button>
+              <img src={"/images/removeicon.svg"} alt="add" />
+            </button>
             <hr />
+            <button>
+              <img src={"/images/returnicon.svg"} alt="return" />
+            </button>
             <button className="btn">Ask to join</button>
           </div>
         </div>
