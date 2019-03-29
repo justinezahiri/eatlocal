@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
-import hostImage from "../images/hostPlaceholder.png";
 
 class EventsList extends Component {
   render() {
@@ -21,7 +20,7 @@ class EventsList extends Component {
           <div className="events-list">
             <div className="card">
               <div className="image-cropper">
-                <img src={hostImage} alt="host" />
+                <img src={"/images/hostPlaceholder.png"} alt="host" />
               </div>
               <img
                 className="meal-image"
@@ -34,14 +33,14 @@ class EventsList extends Component {
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                   scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
-                  ut convallis ante.{" "}
+                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus
+                  mi, ut convallis ante.{" "}
                 </p>
               </div>
             </div>
             <div className="card">
               <div className="image-cropper">
-                <img src={hostImage} alt="host" />
+                <img src={"/images/hostPlaceholder.png"} alt="host" />
               </div>
               <img
                 className="meal-image"
@@ -54,8 +53,8 @@ class EventsList extends Component {
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                   scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus mi,
-                  ut convallis ante.{" "}
+                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus
+                  mi, ut convallis ante.{" "}
                 </p>
               </div>
             </div>

@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
-import hostImage from "../images/hostPlaceholder.png";
-import map from "../images/mapPlaceholder.png";
-import menuLogo from "../images/menuIcon.png";
-import askLogo from "../images/MessageIcon.png";
 
 class EventDetail extends Component {
   render() {
@@ -18,7 +14,7 @@ class EventDetail extends Component {
             alt="meal"
           />
           <div className="image-cropper">
-            <img src={hostImage} alt="host" />
+            <img src={"/images/hostPlaceholder.png"} alt="host" />
           </div>
         </div>
         <div className="content">
@@ -28,14 +24,14 @@ class EventDetail extends Component {
           </div>
 
           <div>
-            <img src={map} alt="map" />
+            <img src={"/images/mapPlaceholder.png"} alt="map" />
           </div>
 
           <div className="specialities-card">
-            <img src={menuLogo} alt="menu" />
+            <img src={"/images/menuIcon.png"} alt="menu" />
             <h3>Specialities</h3>
             <p>Saturday 9 march</p>
-            <img src={askLogo} alt="ask" />
+            <img src={"/images/MessageIcon.png"} alt="ask" />
           </div>
           <div className="button-card">
             <p>number of guests</p>

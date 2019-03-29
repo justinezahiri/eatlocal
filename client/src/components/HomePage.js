@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/EatlocalLogo.png";
 
 class HomePage extends React.Component {
   render() {
     return (
       <div className="homepage">
         <div className="container">
-          <img src={logo} alt="logo" />
+          <img src={"/images/EatlocalLogo.png"} alt="logo" />
           <p>
             You are what you eat
             <br />

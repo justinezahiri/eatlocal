@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import dropdownIcon from "../images/dropdownIcon.png";
 
 class Navbar extends Component {
   render() {
@@ -9,11 +8,11 @@ class Navbar extends Component {
         <ul>
           <li>
             <Link to="/">
-              <img className="logo" src="./images/logoEatlocal.svg" alt="logo" />
+              <img className="logo" src="/images/logoEatlocal.svg" alt="logo" />
             </Link>
           </li>
           <li>
-            <img src={dropdownIcon} alt="dropdown-icon" />
+            <img src={"/images/dropdownIcon.png"} alt="dropdown-icon" />
 
             <ul class="dropdown">
               <li>
