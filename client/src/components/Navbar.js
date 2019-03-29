@@ -8,11 +8,15 @@ class Navbar extends Component {
         <ul>
           <li>
             <Link to="/">
-              <img className="logo" src="/images/logoEatlocal.svg" alt="logo" />
+              <img
+                className="logo"
+                src="/images/eatlocalwhite.svg"
+                alt="logo"
+              />
             </Link>
           </li>
           <li>
-            <img src={"/images/dropdownIcon.png"} alt="dropdown-icon" />
+            <img src={"/images/dropdownicon.svg"} alt="dropdown-icon" />
 
             <ul class="dropdown">
               <li>

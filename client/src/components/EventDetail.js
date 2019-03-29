@@ -28,10 +28,10 @@ class EventDetail extends Component {
           </div>
 
           <div className="specialities-card">
-            <img src={"/images/menuIcon.png"} alt="menu" />
+            <img src={"/images/menu.svg"} alt="menu" />
             <h3>Specialities</h3>
             <p>Saturday 9 march</p>
-            <img src={"/images/MessageIcon.png"} alt="ask" />
+            <img src={"/images/messageicon.svg"} alt="ask" />
           </div>
           <div className="button-card">
             <p>number of guests</p>

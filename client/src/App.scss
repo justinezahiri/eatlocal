@@ -291,17 +291,17 @@ $w: 100px;
   }
 
   input[type="text"] {
-    background-image: url("/images/Loup-icon.png");
+    background-image: url("/images/loupicon.svg");
   }
 
   input[type="date"] {
-    background-image: url("/images/calendar-icon.png");
+    background-image: url("/images/calendaricon.svg");
 
     background-color: white;
   }
 
   input[type="number"] {
-    background-image: url("/images/travelers-icon.png");
+    background-image: url("/images/travelersicon.svg");
   }
 }
 
@@ -327,19 +327,19 @@ $w: 100px;
   }
 
   li.search-city {
-    list-style-image: url("/images/pin-point.png");
+    list-style-image: url("/images/pinicon.svg");
   }
 
   li.search-date {
-    list-style-image: url("/images/calendar-icon.png");
+    list-style-image: url("/images/calendaricon.svg");
   }
 
   li.search-meal {
-    list-style-image: url("/images/clockIcon1.png");
+    list-style-image: url("/images/clockicon.svg");
   }
 
   li.search-guests {
-    list-style-image: url("/images/travelers-icon.png");
+    list-style-image: url("/images/travelersicon.svg");
   }
 
   .event-card {
