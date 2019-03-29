@@ -11,6 +11,16 @@ $blue: #343a54;
 $beige: #f5f0ee;
 $gris: #4b4b4b;
 
+/*
+███████╗██████╗  █████╗  ██████╗██╗███╗   ██╗ ██████╗ 
+██╔════╝██╔══██╗██╔══██╗██╔════╝██║████╗  ██║██╔════╝ 
+███████╗██████╔╝███████║██║     ██║██╔██╗ ██║██║  ███╗
+╚════██║██╔═══╝ ██╔══██║██║     ██║██║╚██╗██║██║   ██║
+███████║██║     ██║  ██║╚██████╗██║██║ ╚████║╚██████╔╝
+╚══════╝╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝╚═╝  ╚═══╝ ╚═════╝ 
+*/
+$w: 100px;
+
 /* 
 ██╗███╗   ██╗██████╗ ██╗   ██╗████████╗
 ██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝
@@ -57,6 +67,14 @@ input {
   }
 }
 
+/*
+ ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
+██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝
+██║     ██║   ██║██╔██╗ ██║   ██║   █████╗  ██╔██╗ ██║   ██║   
+██║     ██║   ██║██║╚██╗██║   ██║   ██╔══╝  ██║╚██╗██║   ██║   
+╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██║ ╚████║   ██║   
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   
+*/
 //set titles
 .content {
   margin: 0 1em;
@@ -71,10 +89,16 @@ input {
   background-color: #f5f0ee;
 }
 
-$w: 100px;
-
+/*
+ ██████╗ █████╗ ██████╗ ██████╗ 
+██╔════╝██╔══██╗██╔══██╗██╔══██╗
+██║     ███████║██████╔╝██║  ██║
+██║     ██╔══██║██╔══██╗██║  ██║
+╚██████╗██║  ██║██║  ██║██████╔╝
+ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+*/
 .card {
-  width: 292px;
+  width: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -83,18 +107,28 @@ $w: 100px;
   box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
   position: relative;
   margin-top: ($w/2);
+  margin-bottom: 2em;
 }
-/*For rounding host image */
+
+/*
+██████╗  ██████╗ ██╗   ██╗███╗   ██╗██████╗     ██╗███╗   ███╗ █████╗  ██████╗ ███████╗
+██╔══██╗██╔═══██╗██║   ██║████╗  ██║██╔══██╗    ██║████╗ ████║██╔══██╗██╔════╝ ██╔════╝
+██████╔╝██║   ██║██║   ██║██╔██╗ ██║██║  ██║    ██║██╔████╔██║███████║██║  ███╗█████╗  
+██╔══██╗██║   ██║██║   ██║██║╚██╗██║██║  ██║    ██║██║╚██╔╝██║██╔══██║██║   ██║██╔══╝  
+██║  ██║╚██████╔╝╚██████╔╝██║ ╚████║██████╔╝    ██║██║ ╚═╝ ██║██║  ██║╚██████╔╝███████╗
+╚═╝  ╚═╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═══╝╚═════╝     ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+*/
+//For rounding host image
 .image-cropper {
   width: $w;
   height: $w;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translate(-($w/2), -($w/2));
+  // position: absolute;
+  // left: 50%;
+  // top: 0;
+  //transform: translate(-($w/2), -($w/2));
   overflow: hidden;
   border-radius: 50%;
-  border: 1px white solid;
+  border: 4px white solid;
 
   img {
     width: 100%;
@@ -106,8 +140,8 @@ $w: 100px;
 .hostImg {
   display: inline;
   margin: 0 auto;
-  height: 100px;
-  width: auto;
+  // height: 100px;
+  // width: auto;
 }
 
 /*
@@ -236,8 +270,8 @@ $w: 100px;
     display: none;
   }
 
-  ul li:hover > ul,
-  ul li:focus-within > ul,
+  ul li:hover>ul,
+  ul li:focus-within>ul,
   ul li ul:hover {
     visibility: visible;
     opacity: 1;
@@ -321,9 +355,18 @@ $w: 100px;
     flex-wrap: wrap;
   }
 
+  h3 {
+    margin-bottom: 0.1em;
+  }
+
+  ul {
+    margin-top: 0.1em;
+  }
+
   li {
     list-style: none;
     display: list-item;
+    margin-bottom: 0.2em;
   }
 
   li.search-city {
@@ -344,16 +387,26 @@ $w: 100px;
 
   .event-card {
     background-color: #ffffff;
+    border-radius: 10px;
 
     p {
       text-align: center;
       color: #4b4b4b;
       font-size: 13px;
+      margin: 1.5em;
     }
 
     h2 {
       text-align: center;
     }
+  }
+
+  //to center host image at the top of the card
+  .image-cropper {
+    transform: translate(-($w/2), -($w/2));
+    left: 50%;
+    top: 0;
+    position: absolute;
   }
 
   .meal-image {
