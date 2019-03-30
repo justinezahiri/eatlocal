@@ -76,7 +76,6 @@ input {
 ╚██████╗╚██████╔╝██║ ╚████║   ██║   ███████╗██║ ╚████║   ██║   
  ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝   ╚══════╝╚═╝  ╚═══╝   ╚═╝   
 */
-//set titles
 .content {
   margin: 0 1em;
   display: flex;
@@ -609,6 +608,43 @@ input {
   li.guests {
     list-style-image: url("/images/travelersicon.svg");
   }
+}
 
+/*
+ ██████╗ ██████╗ ███╗   ██╗███████╗██╗██████╗ ███╗   ███╗
+██╔════╝██╔═══██╗████╗  ██║██╔════╝██║██╔══██╗████╗ ████║
+██║     ██║   ██║██╔██╗ ██║█████╗  ██║██████╔╝██╔████╔██║
+██║     ██║   ██║██║╚██╗██║██╔══╝  ██║██╔══██╗██║╚██╔╝██║
+╚██████╗╚██████╔╝██║ ╚████║██║     ██║██║  ██║██║ ╚═╝ ██║
+ ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     ╚═╝
+*/
+[data-route="/confirm"] {
+  .recap-card {
+    width: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+    background-color: #ffffff;
+    margin-bottom: 1em;
+    margin-top: 3em;
+  }
 
+  li {
+    list-style: none;
+  }
+
+  li.city {
+    list-style-image: url("/images/pinicon.svg");
+  }
+
+  li.date {
+    list-style-image: url("/images/calendaricon.svg");
+  }
+
+  li.meal {
+    list-style-image: url("/images/clockicon.svg");
+  }
+
+  li.guests {
+    list-style-image: url("/images/travelersicon.svg");
+  }
 }

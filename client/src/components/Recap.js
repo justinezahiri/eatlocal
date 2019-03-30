@@ -8,10 +8,20 @@ class Recap extends Component {
         <Navbar />
         <div className="page-content">
           <div className="content">
-            <div className="card">your resa recap</div>
+            <div className="recap-card">
+              <ul>
+                <li>
+                  Host name: <strong>Marwan Sam</strong>
+                </li>
+                <li className="city">Beyrouth</li>
+                <li className="date">23.04.19</li>
+                <li className="meal">Lunch</li>
+                <li className="guests">3 guests</li>
+              </ul>
+            </div>
           </div>
+          <button className="btn">Confirm reservation</button>
         </div>
-        <p>vérifier les infos et confimer la résa</p>
       </div>
     );
   }
