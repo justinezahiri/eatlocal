@@ -11,6 +11,7 @@ import Profile from "./components/Profile.js";
 import Search from "./components/Search.js";
 import EventsList from "./components/EventsList.js";
 import EventDetail from "./components/EventDetail.js";
+import Recap from "./components/Recap.js";
 import Sent from "./components/Sent.js";
 
 class App extends Component {
@@ -50,6 +51,7 @@ class App extends Component {
               <Route exact path="/search" component={Search} />
               <Route exact path="/results" component={EventsList} />
               <Route exact path="/eventdetail" component={EventDetail} />
+              <Route exact path="/confirm" component={Recap} />
               <Route exact path="/sent" component={Sent} />
             </Switch>
           </div>
