@@ -16,6 +16,7 @@ class Search extends Component {
             <form>
               <input type="text" name="city" placeholder="Where to?" />
               <input type="date" name="date" placeholder="Select your dates" />
+              <input type="text" name="meal" placeholder="Lunch or Dinner?" />
               <input
                 type="number"
                 name="number-of-guests"

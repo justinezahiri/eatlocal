@@ -10,6 +10,7 @@ $peach: rgb(253, 156, 110);
 $blue: #343a54;
 $beige: #f5f0ee;
 $gris: #4b4b4b;
+$grisclair: rgba(189, 195, 199, 1);
 
 /*
 ███████╗██████╗  █████╗  ██████╗██╗███╗   ██╗ ██████╗ 
@@ -315,8 +316,9 @@ input {
     margin-bottom: 2em;
   }
 
-  input[type="text"],
+  input[name="city"],
   input[type="date"],
+  input[name="meal"],
   input[type="number"] {
     background-position: 1em center;
     background-repeat: no-repeat;
@@ -324,7 +326,7 @@ input {
     background-size: 1.5em;
   }
 
-  input[type="text"] {
+  input[name="city"] {
     background-image: url("/images/loupicon.svg");
   }
 
@@ -336,6 +338,10 @@ input {
 
   input[type="number"] {
     background-image: url("/images/travelersicon.svg");
+  }
+
+  input[name="meal"] {
+    background-image: url("/images/clockicon.svg")
   }
 }
 
@@ -452,21 +458,69 @@ input {
 
   h2 {
     text-align: left;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
   }
 
   p {
-    text-align: center;
     color: #4b4b4b;
-    font-size: 13px;
+    font-size: 15px;
+  }
+
+  .host-detail {
+    p {
+      text-align: left;
+      margin-top: 0.5em;
+    }
+
   }
 
   .specialities-card {
     width: auto;
-    height: 431px;
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
     margin-bottom: 2em;
+
+    .menulogo {
+      margin-top: 1.4em;
+    }
+
+    .specialities {
+      margin-top: 0.3em;
+      margin-bottom: 0.1em;
+    }
+
+    .date {
+      margin-top: 0.3em;
+      margin-bottom: 0.3em;
+    }
+
+    .askicon {
+      transform: translate(120px, -20px);
+    }
+
+    .menuitem {
+      text-align: left;
+      margin-left: 1em;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+    }
+
+    h4 {
+      color: $grisclair;
+      text-align: left;
+      margin-left: 1em;
+      margin-top: 0.2em;
+      margin-bottom: 0.2em;
+    }
+
+    .menudetail {
+      text-align: left;
+      margin-left: 1em;
+      margin-top: 0.2em;
+      margin-bottom: 1em;
+    }
   }
 
   .button-card {
