@@ -5,7 +5,7 @@ class EventsList extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <a name="top"><Navbar /></a>
         <div className="content">
           <div className="search-reminder">
             <h3>Your research</h3>
@@ -58,7 +58,7 @@ class EventsList extends Component {
                 </p>
               </div>
             </div>
-            <button className="btn">Back to top</button>
+            <button className="btn"><a href="#top">Back to top</a></button>
           </div>
         </div>
       </div>
