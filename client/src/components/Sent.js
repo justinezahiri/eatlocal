@@ -1,10 +1,47 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar.js";
 
 class Sent extends Component {
   render() {
     return (
-      <div>
-        <p>message envoyé à l'hôte</p>
+      <div className="sent">
+        <div>
+          <Navbar />
+        </div>
+
+        <div className="content">
+          <div className="title">
+            <button
+              className="btn-inside btn-boarder"
+              type="submit"
+              name="sent"
+            >
+              <img src={"/images/image-check.svg"} alt="check" />
+            </button>
+            <h1>Sent to host</h1>
+            <p>Waiting for approval</p>
+          </div>
+
+          <div className="result">
+            <p>
+              Lunch at Marwan Sam
+              <br />
+              Saturday 9 March
+              <br />
+              from 1:00 pm to 2:30 pm
+              <br />
+              for 6 guests
+            </p>
+          </div>
+
+          <div className="email">
+            <p>
+              You will be notified by message and email to:
+              <br />
+              marco.dubois@gmail.com
+            </p>
+          </div>
+        </div>
       </div>
     );
   }

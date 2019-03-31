@@ -414,3 +414,56 @@ $w: 100px;
     }
   }
 }
+
+/*
+███████╗███████╗███╗   ██╗████████╗
+██╔════╝██╔════╝████╗  ██║╚══██╔══╝
+███████╗█████╗  ██╔██╗ ██║   ██║   
+    ═██║██╔══╝  ██║╚██╗██║   ██║   
+███████║███████╗██║ ╚████║   ██║   
+ ══════╝╚══════╝╚═╝  ╚═══╝   ╚═╝   
+*/
+[data-route="/sent"] {
+  min-height: 100vh;
+  overflow: hidden;
+  text-align: center;
+  background-color: #5ba3b1;
+
+  .content {
+    height: 35em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .title p {
+    margin: 0;
+  }
+  h1 {
+    margin: 1em 0 0 0;
+    color: white;
+  }
+  p {
+    margin: 2em;
+    color: white;
+  }
+
+  .btn-inside {
+    width: 6em;
+    height: 6em;
+    //border-color: white;
+    color: inherit;
+    background: none;
+    display: inline-block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 7em auto 0;
+  }
+
+  .btn-boarder {
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+}
