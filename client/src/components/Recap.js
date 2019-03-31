@@ -6,6 +6,7 @@ class Recap extends Component {
     return (
       <div>
         <Navbar />
+
         <div className="page-content">
           <div className="content">
             <div className="recap-card">

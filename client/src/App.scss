@@ -226,6 +226,14 @@ input {
     display: block;
   }
 
+  .menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
   a {
     display: block;
   }
@@ -268,8 +276,8 @@ input {
     display: none;
   }
 
-  ul li:hover > ul,
-  ul li:focus-within > ul,
+  ul li:hover>ul,
+  ul li:focus-within>ul,
   ul li ul:hover {
     visibility: visible;
     opacity: 1;
@@ -357,10 +365,11 @@ input {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  a 
-  { 
-  text-decoration:none; 
-  } 
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
   h3 {
     margin-bottom: 0.1em;
@@ -567,10 +576,12 @@ input {
   .title p {
     margin: 0 auto 5em;
   }
+
   h1 {
     margin: 0;
     color: white;
   }
+
   p {
     margin: 2em;
     color: white;
@@ -594,6 +605,7 @@ input {
     border: 2px solid #fff;
     border-radius: 50%;
   }
+
   .btn-inside img {
     width: 11em;
     height: 11em;
@@ -601,6 +613,7 @@ input {
     margin: 0 auto;
   }
 }
+
 /*
 ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
 ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
