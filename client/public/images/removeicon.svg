@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>addicon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="addicon" fill="#343a54" fill-rule="nonzero">
+            <path d="M10,19.9583333 C4.5,19.9583333 0.0416666667,15.5 0.0416666667,10 C0.0416666667,4.5 4.5,0.0416666667 10,0.0416666667 C15.5,0.0416666667 19.9583333,4.5 19.9583333,10 C19.9583333,15.5 15.5,19.9583333 10,19.9583333 L10,19.9583333 Z M10,1.125 C5.125,1.125 1.125,5.125 1.125,10 C1.125,14.875 5.125,18.875 10,18.875 C14.875,18.875 18.875,14.875 18.875,10 C18.875,5.125 14.875,1.125 10,1.125 L10,1.125 Z" id="Fill-38"></path>
+            <polygon id="Fill-39" points="4.70833333 9.41666667 15.2916667 9.41666667 15.2916667 10.5833333 4.70833333 10.5833333"></polygon>
+        </g>
+    </g>
+</svg>

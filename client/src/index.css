@@ -15,3 +15,8 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+/*TODO: find how to implement that font for titles 
+@font-face {
+  font-family: 'Between3-Regular';
+  src: local('Between3-Regular'), url(./fonts/Between3-Regular.ttf) format('truetype');
+} */

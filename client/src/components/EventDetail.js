@@ -18,23 +18,52 @@ class EventDetail extends Component {
           </div>
         </div>
         <div className="content">
-          <div>
+          <div className="host-detail">
             <h2>Marwan Sam</h2>
-            <p>Specialities:Lorem ipsum dolor sit amet</p>
+            <p>
+              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+              lorem ipsum dolor sit amet
+            </p>
           </div>
 
           <div>
-            <img src={"/images/mapPlaceholder.png"} alt="map" />
+            <img src={"/images/mapplaceholder.svg"} alt="map" />
           </div>
 
           <div className="specialities-card">
-            <img src={"/images/menuIcon.png"} alt="menu" />
-            <h3>Specialities</h3>
-            <p>Saturday 9 march</p>
-            <img src={"/images/MessageIcon.png"} alt="ask" />
+            <img className="menulogo" src={"/images/menu.svg"} alt="menu" />
+            <h3 className="specialities">Specialities</h3>
+            <p className="date">Saturday 9 march</p>
+            <img
+              className="askicon"
+              src={"/images/messageicon.svg"}
+              alt="ask"
+            />
+            <h4>TO START</h4>
+            <h3 className="menuitem">Fattouch Salad and Mezze</h3>
+            <p className="menudetail">
+              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            </p>
+            <h4>MAIN COURSE</h4>
+            <h3 className="menuitem">Chich Barak with rice</h3>
+            <p className="menudetail">
+              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            </p>
+            <h4>TO FINISH</h4>
+            <h3 className="menuitem">Knefe</h3>
+            <p className="menudetail">
+              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
+            </p>
           </div>
           <div className="button-card">
-            <p>number of guests</p>
+            <img src={"/images/travelersicon.svg"} alt="travelers" />
+            <button>
+              <img src={"/images/addicon.svg"} alt="add" />
+            </button>
+            <h4>3</h4>
+            <button>
+              <img src={"/images/removeicon.svg"} alt="add" />
+            </button>
             <hr />
             <button className="btn">Ask to join</button>
           </div>

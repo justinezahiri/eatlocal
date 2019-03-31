@@ -8,7 +8,7 @@ class EventsList extends Component {
         <Navbar />
         <div className="content">
           <div className="search-reminder">
-            <h3>Your research: </h3>
+            <h3>Your research</h3>
             <ul>
               <li className="search-city">Beyrouth</li>
               <li className="search-date">23.03.19</li>
