@@ -561,11 +561,10 @@ input {
   overflow: hidden;
   text-align: center;
   
-
-  .card {
+  .sent .card {
     background-color: #5ba3b1;
     border-radius: 10px;
-    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.3);
   }
 
   .content {
@@ -579,20 +578,18 @@ input {
   img {
     margin-top: 2em;
   }
-  p {
-    margin: 0 auto 5em;
-  }
   h1 {
     margin: 0;
     color: white;
   }
-
+  p {
+    margin: 0 auto 5em;
+  }
+  
   p {
     margin: 2em;
     color: white;
   }
-
-  
 }
 /*
 ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
