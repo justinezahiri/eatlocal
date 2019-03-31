@@ -10,14 +10,10 @@ class Sent extends Component {
         </div>
 
         <div className="content">
+        <div className="card">
           <div className="title">
-            <button
-              className="btn-inside btn-boarder"
-              type="submit"
-              name="sent"
-            >
-              <img src={"/images/image-check.svg"} alt="check" />
-            </button>
+          <img src={"/images/button-check.svg"} alt="check" />
+            
             <h1>Sent to host</h1>
             <p>Waiting for approval</p>
           </div>
@@ -40,6 +36,8 @@ class Sent extends Component {
               <br />
               marco.dubois@gmail.com
             </p>
+          </div>
+
           </div>
         </div>
       </div>

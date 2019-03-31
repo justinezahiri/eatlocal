@@ -68,6 +68,8 @@ input {
   }
 }
 
+
+
 /*
  ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
 ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝
@@ -206,6 +208,8 @@ input {
     bottom: 0;
     margin-bottom: 2em;
   }
+
+  
 }
 
 /*
@@ -308,6 +312,7 @@ input {
     margin-top: 4em;
   }
 
+  
   .btn {
     bottom: 0;
     margin-bottom: 2em;
@@ -555,7 +560,13 @@ input {
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
-  background-color: #5ba3b1;
+  
+
+  .card {
+    background-color: #5ba3b1;
+    border-radius: 10px;
+    box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
+  }
 
   .content {
     height: 35em;
@@ -564,42 +575,24 @@ input {
     justify-content: space-between;
   }
 
-  .title p {
+  .title 
+  img {
+    margin-top: 2em;
+  }
+  p {
     margin: 0 auto 5em;
   }
   h1 {
     margin: 0;
     color: white;
   }
+
   p {
     margin: 2em;
     color: white;
   }
 
-  .btn-inside {
-    width: 6em;
-    height: 6em;
-    //border-color: white;
-    color: inherit;
-    background: none;
-    display: inline-block;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 7em auto 0;
-  }
-
-  .btn-boarder {
-    border: 2px solid #fff;
-    border-radius: 50%;
-  }
-  .btn-inside img {
-    width: 11em;
-    height: 11em;
-    transform: translate(-3em, -2.9em);
-    margin: 0 auto;
-  }
+  
 }
 /*
 ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
