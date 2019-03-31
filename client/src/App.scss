@@ -209,7 +209,7 @@ input {
     margin-bottom: 2em;
   }
 
-  
+
 }
 
 /*
@@ -228,6 +228,14 @@ input {
   .logo {
     height: 1.3em;
     display: block;
+  }
+
+  .menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 
   a {
@@ -272,8 +280,8 @@ input {
     display: none;
   }
 
-  ul li:hover > ul,
-  ul li:focus-within > ul,
+  ul li:hover>ul,
+  ul li:focus-within>ul,
   ul li ul:hover {
     visibility: visible;
     opacity: 1;
@@ -312,7 +320,7 @@ input {
     margin-top: 4em;
   }
 
-  
+
   .btn {
     bottom: 0;
     margin-bottom: 2em;
@@ -362,10 +370,11 @@ input {
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  a 
-  { 
-  text-decoration:none; 
-  } 
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 
   h3 {
     margin-bottom: 0.1em;
@@ -560,11 +569,12 @@ input {
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
-  
+
   .sent .card {
     background-color: #5ba3b1;
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.3);
+
   }
 
   .content {
@@ -578,6 +588,7 @@ input {
   img {
     margin-top: 2em;
   }
+
   h1 {
     margin: 0;
     color: white;
@@ -590,7 +601,9 @@ input {
     margin: 2em;
     color: white;
   }
+
 }
+
 /*
 ██████╗ ██████╗  ██████╗ ███████╗██╗██╗     ███████╗
 ██╔══██╗██╔══██╗██╔═══██╗██╔════╝██║██║     ██╔════╝
