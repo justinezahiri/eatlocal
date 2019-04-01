@@ -22,7 +22,7 @@ class EventsList extends Component {
           <div className="events-list">
             <div className="card">
               <div className="image-cropper">
-                <img src={"/images/hostplacedolder.png"} alt="host" />
+                <img src={"/images/hostplaceholder.png"} alt="host" />
               </div>
               <img
                 className="meal-image"
