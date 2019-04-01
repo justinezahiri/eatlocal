@@ -5,7 +5,9 @@ class EventsList extends Component {
   render() {
     return (
       <div>
-        <a name="top"><Navbar /></a>
+        <a name="top">
+          <Navbar />
+        </a>
         <div className="content">
           <div className="search-reminder">
             <h3>Your research</h3>
@@ -20,7 +22,7 @@ class EventsList extends Component {
           <div className="events-list">
             <div className="card">
               <div className="image-cropper">
-                <img src={"/images/hostPlaceholder.png"} alt="host" />
+                <img src={"/images/hostplacedolder.png"} alt="host" />
               </div>
               <img
                 className="meal-image"
@@ -40,7 +42,7 @@ class EventsList extends Component {
             </div>
             <div className="card">
               <div className="image-cropper">
-                <img src={"/images/hostPlaceholder.png"} alt="host" />
+                <img src={"/images/hostplaceholder.png"} alt="host" />
               </div>
               <img
                 className="meal-image"
@@ -58,7 +60,9 @@ class EventsList extends Component {
                 </p>
               </div>
             </div>
-            <button className="btn"><a href="#top">Back to top</a></button>
+            <button className="btn">
+              <a href="#top">Back to top</a>
+            </button>
           </div>
         </div>
       </div>
