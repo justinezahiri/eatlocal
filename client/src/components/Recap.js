@@ -20,8 +20,10 @@ class Recap extends Component {
                 <li className="guests">3 guests</li>
               </ul>
             </div>
+            <button className="btn" type="submit">
+              Confirm reservation
+            </button>
           </div>
-          <button className="btn">Confirm reservation</button>
         </div>
       </div>
     );
