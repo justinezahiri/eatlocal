@@ -220,7 +220,7 @@ input {
 ██║ ╚████║██║  ██║ ╚████╔╝ ██████╔╝██║  ██║██║  ██║
 ╚═╝  ╚═══╝╚═╝  ╚═╝  ╚═══╝  ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝                                       
 */
-.Navbar {
+.navbar {
   background-color: $peach;
   display: flex;
   padding: 0.5em;
@@ -230,74 +230,30 @@ input {
     display: block;
   }
 
+  .dropbtn {
+    background-color: inherit;
+    border-style: none;
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    color: white;
+    margin: 1em;
+  }
+
   .menu {
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
+    background-color: $peach;
+
+    li {
+      list-style: none;
+    }
   }
 
-  a {
-    display: block;
-  }
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
-
-    display: flex;
-    align-items: center;
-    width: 100%;
-  }
-
-  li {
-    display: block;
-    position: relative;
-    text-decoration: none;
-    transition-duration: 0.5s;
-  }
-
-  li:nth-child(2) {
-    margin-left: auto;
-  }
-
-  li:hover {
-    // background: $beige;
-    cursor: pointer;
-  }
-
-  ul li ul {
-    background: rgba(253, 156, 110, 0.8);
-    visibility: hidden;
-    opacity: 0;
-    min-width: 5rem;
-    position: absolute;
-    transition: all 0.5s ease;
-    margin-top: 1rem;
-    left: 0;
-    display: none;
-  }
-
-  ul li:hover>ul,
-  ul li:focus-within>ul,
-  ul li ul:hover {
-    visibility: visible;
-    opacity: 1;
-    display: block;
-  }
-
-  ul li ul li {
-    clear: both;
-    width: 100%;
-  }
-}
-
-.navbar-link {
-  text-decoration: none;
-  color: white;
-  margin: 1em;
 }
 
 /*
@@ -584,8 +540,7 @@ input {
     justify-content: space-between;
   }
 
-  .title 
-  img {
+  .title img {
     margin-top: 2em;
   }
 
@@ -593,10 +548,11 @@ input {
     margin: 0;
     color: white;
   }
+
   p {
     margin: 0 auto 5em;
   }
-  
+
   p {
     margin: 2em;
     color: white;

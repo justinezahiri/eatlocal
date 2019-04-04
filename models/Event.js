@@ -14,11 +14,6 @@ const eventSchema = new Schema({
   menu: Array,
   image: String,
   avatar: String
-}, {
-  timestamps: {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-  }
 });
 
 const Event = mongoose.model('Event', eventSchema);

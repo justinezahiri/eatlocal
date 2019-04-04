@@ -102,55 +102,16 @@ router.get("/logout", (req, res) => {
   res.status(204).send();
 });
 
-router.get("/loggedin", (req, res, next) => {
-  if (req.isAuthenticated()) { // req.isAuthenticated() is defined by passport
-    res.status(200).json(req.user);
-    return;
-  }
+// router.get("/loggedin", (req, res, next) => {
+//   if (req.isAuthenticated()) { // req.isAuthenticated() is defined by passport
+//     res.status(200).json(req.user);
+//     return;
+//   }
 
-  res.status(403).json({
-    message: 'Unauthorized'
-  });
-});
-
-router.post("/edit", (req, res, next) => {
-  // Check user is logged in
-  if (!req.isAuthenticated()) {
-    res.status(401).json({
-      message: "You need to be logged in to edit your profile"
-    });
-    return;
-  }
-
-  // Updating `req.user` with each `req.body` field (excluding some internal fields `cannotUpdateFields`)
-  const cannotUpdateFields = ['_id', 'password'];
-  Object.keys(req.body).filter(key => cannotUpdateFields.indexOf(key) === -1).forEach(key => {
-    req.user[key] = req.body[key];
-  });
-
-  // Validating user with its new values (see: https://mongoosejs.com/docs/validation.html#async-custom-validators)
-  req.user.validate(function (error) {
-    if (error) {
-      // see: https://mongoosejs.com/docs/validation.html#validation-errors
-      res.status(400).json({
-        message: error.errors
-      });
-      return;
-    }
-
-    // Validation ok, let save it
-    req.user.save(function (err) {
-      if (err) {
-        res.status(500).json({
-          message: 'Error while saving user into DB.'
-        });
-        return;
-      }
-
-      res.status(200).json(req.user);
-    })
-  });
-});
+//   res.status(403).json({
+//     message: 'Unauthorized'
+//   });
+// });
 
 // //CLOUDINARY UPLOADER
 // const uploader = require('../cloudinary.js');
