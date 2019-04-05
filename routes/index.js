@@ -8,8 +8,20 @@ router.get('/', (req, res, next) => {
 
 //GET results page according to search
 router.get('/search', (req, res, next) => {
-
-})
+  Event.find({
+      place: 'Paris',
+      date: '04.03.2019',
+      meal: 'lunch',
+      seats: '3'
+    })
+    //TODO: filtrer avec la req.query
+    .then(selectedEvents => {
+      res.json(selectedEvents);
+    })
+    .catch(err => {
+      res.json(err);
+    })
+});
 
 //GET event details
 router.get('/:event_id', (req, res, next) => {
@@ -20,6 +32,13 @@ router.get('/:event_id', (req, res, next) => {
     });
     return;
   }
+  Event.findById(req.params.id)
+    .then(response => {
+      res.status(200).json(response);
+    })
+    .catch(err => {
+      res.json(err);
+    })
 })
 
 //POST book event

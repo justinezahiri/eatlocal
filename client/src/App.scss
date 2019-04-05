@@ -224,6 +224,7 @@ input {
   background-color: $peach;
   display: flex;
   padding: 0.5em;
+  align-items: center;
 
   .logo {
     height: 1.3em;
@@ -233,6 +234,7 @@ input {
   .dropbtn {
     background-color: inherit;
     border-style: none;
+    margin-left: auto;
   }
 
   .navbar-link {
@@ -248,10 +250,19 @@ input {
     top: 0;
     bottom: 0;
     background-color: $peach;
+    padding: 0;
+    margin: 47px 0 0 0;
 
     li {
       list-style: none;
+      padding: 1em;
+      border-top: 1px white solid;
     }
+
+    li:hover {
+      background: #e48457e6;
+    }
+
   }
 
 }
