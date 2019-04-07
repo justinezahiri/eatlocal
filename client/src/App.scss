@@ -168,9 +168,6 @@ input {
 
   .btn {
     background-color: rgba(253, 156, 110, 0.9);
-  }
-
-  .btn.signup {
     margin-bottom: 1em;
   }
 
@@ -311,6 +308,7 @@ input {
     background-image: url("/images/calendaricon.svg");
 
     background-color: white;
+    padding: 0.8em;
   }
 
   input[type="number"] {

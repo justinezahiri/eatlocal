@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
+import axios from "axios";
 
 class Sent extends Component {
   render() {

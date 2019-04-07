@@ -1,5 +1,9 @@
 const express = require('express');
 const router = express.Router();
+const Event = require('../models/Event');
+const mongoose = require('mongoose');
+const Resa = require('../models/Resa');
+const User = require('../models/User');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -8,13 +12,43 @@ router.get('/', (req, res, next) => {
 
 //GET results page according to search
 router.get('/search', (req, res, next) => {
-  Event.find({
-      place: 'Paris',
-      date: '04.03.2019',
-      meal: 'lunch',
-      seats: '3'
+  if (!req.user) {
+    res.status(401).json({
+      message: "You have to be logged in to find a host"
+    });
+    return;
+  }
+
+  if (!("place" in req.query)) {
+    res.status(400).json({
+      messsage: "please add a place"
     })
-    //TODO: filtrer avec la req.query
+  }
+  //TODO: validate date format 
+  if (!("date" in req.query)) {
+    res.status(400).json({
+      messsage: "please add a date"
+    })
+  }
+  if (!("meal" in req.query)) {
+    res.status(400).json({
+      messsage: "please choose a meal"
+    })
+  }
+  if (!("seats" in req.query)) {
+    res.status(400).json({
+      messsage: "please add number of seats"
+    })
+  }
+
+  Event.find({
+      'place': req.query.place,
+      'date': req.query.date,
+      'meal': req.query.meal,
+      'seats': {
+        $gte: req.query.seats
+      }
+    })
     .then(selectedEvents => {
       res.json(selectedEvents);
     })
@@ -24,17 +58,50 @@ router.get('/search', (req, res, next) => {
 });
 
 //GET event details
-router.get('/:event_id', (req, res, next) => {
+router.get('/events/:event_id', (req, res, next) => {
 
-  if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+  if (!mongoose.Types.ObjectId.isValid(req.params.event_id)) {
     res.status(400).json({
       message: 'Specified id is not valid'
     });
     return;
   }
-  Event.findById(req.params.id)
+
+  Event.findById(req.params.event_id)
     .then(response => {
+      if (!response) {
+        res.status(404).json({
+          message: "event not find"
+        })
+      }
+
       res.status(200).json(response);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+})
+
+//GET profile info
+router.get('/profile', (req, res, next) => {
+
+  if (!req.user) {
+    res.status(401).json({
+      message: "You have to be logged in to view your profile"
+    });
+    return;
+  }
+
+  Resa.find({
+      'user_id': req.user._id
+    })
+    .then(bookedEvents => {
+      let profile = {
+        ...req.user
+      };
+      profile.bookedEvents = bookedEvents;
+
+      res.status(200).json(profile);
     })
     .catch(err => {
       res.json(err);
@@ -42,11 +109,26 @@ router.get('/:event_id', (req, res, next) => {
 })
 
 //POST book event
-router.post('book', (req, res, next) => {
-  const user_id = req.body.user_id;
-  const event_id = req.body.event_id;
-  const seats = req.body.seats;
-})
+router.post('/book', (req, res, next) => {
+  if (!req.user) {
+    res.status(401).json({
+      message: "You have to be logged in to book a reservation"
+    });
+    return;
+  }
+
+  Resa.create({
+      user_id: req.user._id,
+      event_id: req.body.event_id,
+      seats: req.body.seats
+    })
+    .then(response => {
+      res.status(201).json(response);
+    })
+    .catch(err => {
+      res.status(500).json(err);
+    })
+});
 
 
 module.exports = router;

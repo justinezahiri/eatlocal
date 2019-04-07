@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
+import axios from "axios";
 
-class Recap extends Component {
+class Confirm extends Component {
   render() {
     return (
       <div>
@@ -30,4 +31,4 @@ class Recap extends Component {
   }
 }
 
-export default Recap;
+export default Confirm;

@@ -7,36 +7,36 @@ import HomePage from "./components/HomePage.js";
 import Signup from "./components/auth/Signup.js";
 import Login from "./components/auth/Login.js";
 import Profile from "./components/Profile.js";
-// import AuthService from "./components/auth/auth-service.js";
+import AuthService from "./components/auth/auth-service.js";
 import Search from "./components/Search.js";
 import EventsList from "./components/EventsList.js";
 import EventDetail from "./components/EventDetail.js";
-import Recap from "./components/Recap.js";
+import Confirm from "./components/Confirm.js";
 import Sent from "./components/Sent.js";
 
 class App extends Component {
-  // state = {
-  //   user: null
-  // };
+  state = {
+    user: null
+  };
 
-  // service = new AuthService();
+  service = new AuthService();
 
-  // fetchUser = () => {
-  //   if (this.state.user === null) {
-  //     this.service
-  //       .loggedin()
-  //       .then(response => this.setState({ user: response }))
-  //       .catch(err => this.setState({ user: false }));
-  //   }
-  // };
+  fetchUser = () => {
+    if (this.state.user === null) {
+      this.service
+        .loggedin()
+        .then(response => this.setState({ user: response }))
+        .catch(err => this.setState({ user: false }));
+    }
+  };
 
-  // updateUser = data => {
-  //   this.setState({ user: data });
-  // };
+  updateUser = data => {
+    this.setState({ user: data });
+  };
 
-  // componentDidMount() {
-  //   this.fetchUser();
-  // }
+  componentDidMount() {
+    this.fetchUser();
+  }
 
   render() {
     return (
@@ -45,13 +45,31 @@ class App extends Component {
           <div className="App" data-route={props.location.pathname}>
             <Switch>
               <Route exact path="/" component={HomePage} />
-              <Route exact path="/register" component={Signup} />
-              <Route exact path="/login" component={Login} />
+
+              <Route
+                exact
+                path="/register"
+                render={props => (
+                  <Signup
+                    updateUser={this.updateUser}
+                    history={props.history}
+                  />
+                )}
+              />
+
+              <Route
+                exact
+                path="/login"
+                render={props => (
+                  <Login updateUser={this.updateUser} history={props.history} />
+                )}
+              />
+
               <Route exact path="/profile" component={Profile} />
               <Route exact path="/search" component={Search} />
               <Route exact path="/results" component={EventsList} />
               <Route exact path="/eventdetail" component={EventDetail} />
-              <Route exact path="/confirm" component={Recap} />
+              <Route exact path="/confirm" component={Confirm} />
               <Route exact path="/sent" component={Sent} />
             </Switch>
           </div>

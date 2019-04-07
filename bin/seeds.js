@@ -20,15 +20,15 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-let users = [{
-    username: "alice",
-    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
-  },
-  {
-    username: "bob",
-    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
-  }
-]
+// let users = [{
+//     username: "alice",
+//     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+//   },
+//   {
+//     username: "bob",
+//     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+//   }
+// ]
 
 let events = [{
     date: new Date("2019-04-07"),

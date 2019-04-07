@@ -43,17 +43,15 @@ router.post("/login", (req, res, next) => {
   })(req, res, next);
 });
 
-router.get("/signup", (req, res, next) => {
-  res.render("auth/signup");
-});
-
 router.post("/signup", (req, res, next) => {
   const username = req.body.username;
   const password = req.body.password;
+  const email = req.body.email;
+  const phone = req.body.phone;
 
-  if (!username || !password) {
+  if (!username || !password || !email || !phone) {
     res.status(400).json({
-      message: "Indicate username and password"
+      message: "Please complete all fields"
     });
     return;
   }
@@ -102,16 +100,16 @@ router.get("/logout", (req, res) => {
   res.status(204).send();
 });
 
-// router.get("/loggedin", (req, res, next) => {
-//   if (req.isAuthenticated()) { // req.isAuthenticated() is defined by passport
-//     res.status(200).json(req.user);
-//     return;
-//   }
+router.get("/loggedin", (req, res, next) => {
+  if (req.isAuthenticated()) { // req.isAuthenticated() is defined by passport
+    res.status(200).json(req.user);
+    return;
+  }
 
-//   res.status(403).json({
-//     message: 'Unauthorized'
-//   });
-// });
+  res.status(403).json({
+    message: 'Unauthorized'
+  });
+});
 
 // //CLOUDINARY UPLOADER
 // const uploader = require('../cloudinary.js');
