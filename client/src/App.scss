@@ -34,9 +34,12 @@ input {
   border-radius: 1000000px;
   border-style: none;
   display: block;
-  padding: 1em;
+  // padding: 1em;
+  height: 3.5em;
   width: 100%;
   margin-bottom: 1.5em;
+  text-align: center;
+  font-size: 14px;
 
   @media (min-width: 900px) {
     display: inline-block;
@@ -62,6 +65,7 @@ input {
   border-style: none;
   display: block;
   width: 100%;
+  margin-bottom: 0.5em;
 
   @media (min-width: 900px) {
     display: inline-block;
@@ -249,6 +253,7 @@ input {
     background-color: $peach;
     padding: 0;
     margin: 47px 0 0 0;
+    text-align: center;
 
     li {
       list-style: none;
