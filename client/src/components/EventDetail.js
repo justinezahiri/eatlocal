@@ -27,7 +27,7 @@ class EventDetail extends Component {
             </p>
           </div>
 
-          <div>
+          <div className="map">
             <img src={"/images/mapplaceholder.svg"} alt="map" />
           </div>
 
@@ -40,21 +40,26 @@ class EventDetail extends Component {
               src={"/images/messageicon.svg"}
               alt="ask"
             />
-            <h4>TO START</h4>
-            <h3 className="menuitem">Fattouch Salad and Mezze</h3>
-            <p className="menudetail">
-              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-            </p>
-            <h4>MAIN COURSE</h4>
-            <h3 className="menuitem">Chich Barak with rice</h3>
-            <p className="menudetail">
-              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-            </p>
-            <h4>TO FINISH</h4>
-            <h3 className="menuitem">Knefe</h3>
-            <p className="menudetail">
-              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-            </p>
+            <div className="event-menu">
+              <h4>TO START</h4>
+              <h3 className="menuitem">Fattouch Salad and Mezze</h3>
+              <p className="menudetail">
+                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
+                amet
+              </p>
+              <h4>MAIN COURSE</h4>
+              <h3 className="menuitem">Chich Barak with rice</h3>
+              <p className="menudetail">
+                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
+                amet
+              </p>
+              <h4>TO FINISH</h4>
+              <h3 className="menuitem">Knefe</h3>
+              <p className="menudetail">
+                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
+                amet
+              </p>
+            </div>
           </div>
           <div className="button-card">
             <img src={"/images/travelersicon.svg"} alt="travelers" />
