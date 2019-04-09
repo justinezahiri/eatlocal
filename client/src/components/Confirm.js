@@ -6,7 +6,7 @@ class Confirm extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logout={this.props.logout} />
 
         <div className="page-content">
           <div className="content">

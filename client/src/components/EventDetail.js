@@ -6,7 +6,7 @@ class EventDetail extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logout={this.props.logout} />
 
         <div>
           <img
@@ -62,16 +62,24 @@ class EventDetail extends Component {
             </div>
           </div>
           <div className="button-card">
-            <img src={"/images/travelersicon.svg"} alt="travelers" />
-            <button>
-              <img src={"/images/addicon.svg"} alt="add" />
-            </button>
-            <h4>3</h4>
-            <button>
-              <img src={"/images/removeicon.svg"} alt="add" />
-            </button>
-            <hr />
-            <button className="btn">Ask to join</button>
+            <div className="join-form">
+              <div className="add-guests">
+                <img src={"/images/travelersicon.svg"} alt="travelers" />
+                <button>
+                  <img src={"/images/addicon.svg"} alt="add" />
+                </button>
+                <h4>3</h4>
+                <button>
+                  <img src={"/images/removeicon.svg"} alt="add" />
+                </button>
+              </div>
+
+              <hr />
+
+              <div className="join-btn">
+                <button className="btn">Ask to join</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

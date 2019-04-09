@@ -1,23 +1,24 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
-import axios from "axios";
 
 class Profile extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logout={this.props.logout} />
         <div className="page-content">
           <div className="content">
-            <div className="profile-card">
-              <h2>Your details</h2>
-              <h3>Username</h3>
-              <p>Justine</p>
-              <h3>Email</h3>
-              <p>justine@example.com</p>
-              <h3>Phone</h3>
-              <p className="last-info">0435765847</p>
-            </div>
+            {this.props.user && (
+              <div className="profile-card">
+                <h2>Your details</h2>
+                <h3>Username</h3>
+                <p>{this.props.user.username}</p>
+                <h3>Email</h3>
+                <p>{this.props.user.email}</p>
+                <h3>Phone</h3>
+                <p className="last-info">{this.props.user.phone}</p>
+              </div>
+            )}
 
             <div className="reminder-card">
               <h2>Your next events</h2>

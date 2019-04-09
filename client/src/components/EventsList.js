@@ -3,25 +3,58 @@ import Navbar from "./Navbar.js";
 import axios from "axios";
 
 class EventsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { ListOfEvents: [] };
+  }
+
+  getSelectedEvents = () => {
+    axios
+      .get(
+        `http://localhost:5000/api/search?place=
+        ${this.props.searchparams.place}
+        &${this.props.searchparams.date}
+        &${this.props.searchparams.meal}
+        &${this.props.searchparams.seats}`
+      )
+      .then(responseFromApi => {
+        this.setState({
+          ListOfEvents: responseFromApi.data
+        }).catch(err => {
+          console.log(err);
+        });
+      });
+  };
+
+  componentDidMount() {
+    this.getSelectedEvents();
+  }
+
   render() {
     return (
       <div>
-        <a name="top">
-          <Navbar />
-        </a>
+        <Navbar logout={this.props.logout} />
         <div className="content">
           <div className="search-reminder">
             <h3>Your research</h3>
             <ul>
-              <li className="search-city">Beyrouth</li>
-              <li className="search-date">23.03.19</li>
-              <li className="search-meal">Lunch</li>
-              <li className="search-guests">3 guests</li>
+              <li className="search-city">{this.props.searchparams.place}</li>
+              <li className="search-date">{this.props.searchparams.date}</li>
+              <li className="search-meal">{this.props.searchparams.meal}</li>
+              <li className="search-guests">{this.props.searchparams.seats}</li>
             </ul>
           </div>
 
           <div className="events-list">
             <div className="card">
+              {/*
+              {this.state.ListOfEvents.map(event => {
+                return (
+                  <div key={event_id}>
+                    <img src={event.image} alt="meal" />
+                  </div>
+                );
+              })} */}
               <div className="image-cropper">
                 <img src={"/images/hostplaceholder.png"} alt="host" />
               </div>

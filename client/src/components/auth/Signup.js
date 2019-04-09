@@ -25,7 +25,6 @@ class Signup extends Component {
       )
 
       .then(response => {
-        console.log("thenn");
         this.setState({
           username: "",
           password: "",
@@ -33,8 +32,6 @@ class Signup extends Component {
           phone: ""
         });
         this.props.updateUser(response.data);
-
-        console.log("coucou");
         this.props.history.push("/search");
       })
       .catch(error => console.log(error));
@@ -48,7 +45,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logout={this.props.logout} />
         <div className="page-content">
           <h1>Signup</h1>
           <div className="content">
@@ -56,7 +53,7 @@ class Signup extends Component {
               <div>
                 <label>
                   <input
-                    type="name"
+                    type="text"
                     name="username"
                     value={this.state.username}
                     onChange={this.handleChange}
@@ -74,7 +71,7 @@ class Signup extends Component {
                 </label>
                 <label>
                   <input
-                    type="number"
+                    type="text"
                     name="phone"
                     value={this.state.phone}
                     onChange={this.handleChange}
@@ -83,7 +80,7 @@ class Signup extends Component {
                 </label>
                 <label>
                   <input
-                    type="email"
+                    type="text"
                     name="email"
                     value={this.state.email}
                     onChange={this.handleChange}

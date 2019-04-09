@@ -74,8 +74,6 @@ input {
   }
 }
 
-
-
 /*
  ██████╗ ██████╗ ███╗   ██╗████████╗███████╗███╗   ██╗████████╗
 ██╔════╝██╔═══██╗████╗  ██║╚══██╔══╝██╔════╝████╗  ██║╚══██╔══╝
@@ -211,8 +209,6 @@ input {
     bottom: 0;
     margin-bottom: 2em;
   }
-
-
 }
 
 /*
@@ -244,9 +240,20 @@ input {
     text-decoration: none;
     color: white;
     margin: 1em;
+    font-size: 16px;
+  }
+
+  .navbar-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-family: inherit;
   }
 
   .menu {
+    margin-top: 0;
+    margin-bottom: 0;
+
     position: fixed;
     left: 0;
     right: 0;
@@ -256,6 +263,8 @@ input {
     padding: 0;
     margin: 47px 0 0 0;
     text-align: center;
+    z-index: 1;
+
 
     li {
       list-style: none;
@@ -266,9 +275,7 @@ input {
     li:hover {
       background: #e48457e6;
     }
-
   }
-
 }
 
 /*
@@ -456,7 +463,8 @@ input {
   }
 
   .map {
-    width: fit-content;
+    width: 100%;
+    margin-bottom: 0.5em;
   }
 
   .specialities-card {
@@ -469,7 +477,7 @@ input {
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 
     .menulogo {
       margin-top: 1.4em;
@@ -518,14 +526,23 @@ input {
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
     margin-bottom: 2em;
+    justify-content: center;
+
+    flex-direction: column;
+
+    .join-form {
+      width: 100%;
+      margin: 0 1em;
+    }
+
+    .add-guests {
+      display: inline-flex;
+    }
 
     hr {
       color: #909090;
       opacity: 0.5;
-    }
-
-    .btn {
-      width: 50%;
+      margin: 0.2 0.5em;
     }
   }
 }

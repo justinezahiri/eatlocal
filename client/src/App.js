@@ -8,6 +8,7 @@ import Signup from "./components/auth/Signup.js";
 import Login from "./components/auth/Login.js";
 import Profile from "./components/Profile.js";
 import AuthService from "./components/auth/auth-service.js";
+
 import Search from "./components/Search.js";
 import EventsList from "./components/EventsList.js";
 import EventDetail from "./components/EventDetail.js";
@@ -16,7 +17,8 @@ import Sent from "./components/Sent.js";
 
 class App extends Component {
   state = {
-    user: null
+    user: null,
+    searchparams: null
   };
 
   service = new AuthService();
@@ -34,6 +36,16 @@ class App extends Component {
     this.setState({ user: data });
   };
 
+  updateSearchparams = data => {
+    this.setState({ searchparams: data });
+  };
+
+  logout = event => {
+    this.service.logout().then(response => {
+      this.updateUser(false);
+    });
+  };
+
   componentDidMount() {
     this.fetchUser();
   }
@@ -43,6 +55,8 @@ class App extends Component {
       <Route
         render={props => (
           <div className="App" data-route={props.location.pathname}>
+            <div id="top" />
+
             <Switch>
               <Route exact path="/" component={HomePage} />
 
@@ -61,13 +75,50 @@ class App extends Component {
                 exact
                 path="/login"
                 render={props => (
-                  <Login updateUser={this.updateUser} history={props.history} />
+                  <Login
+                    logout={this.logout}
+                    updateUser={this.updateUser}
+                    history={props.history}
+                  />
                 )}
               />
 
-              <Route exact path="/profile" component={Profile} />
-              <Route exact path="/search" component={Search} />
-              <Route exact path="/results" component={EventsList} />
+              <Route
+                exact
+                path="/profile"
+                render={props => (
+                  <Profile
+                    logout={this.logout}
+                    user={this.state.user}
+                    updateUser={this.updateUser}
+                  />
+                )}
+              />
+
+              <Route
+                exact
+                path="/search"
+                render={props => (
+                  <Search
+                    logout={this.logout}
+                    updateSearchparams={this.updateSearchparams}
+                    history={props.history}
+                  />
+                )}
+              />
+
+              <Route
+                exact
+                path="/results"
+                render={props => (
+                  <EventsList
+                    logout={this.logout}
+                    searchparams={this.state.searchparams}
+                    history={props.history}
+                  />
+                )}
+              />
+              {/* <Route exact path="/results" component={EventsList} /> */}
               <Route exact path="/eventdetail" component={EventDetail} />
               <Route exact path="/confirm" component={Confirm} />
               <Route exact path="/sent" component={Sent} />

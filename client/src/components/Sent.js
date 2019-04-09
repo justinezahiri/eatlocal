@@ -7,7 +7,7 @@ class Sent extends Component {
     return (
       <div className="sent">
         <div>
-          <Navbar />
+          <Navbar logout={this.props.logout} />
         </div>
 
         <div className="content">

@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 class Navbar extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       displayMenu: false
@@ -54,6 +53,11 @@ class Navbar extends Component {
               <Link to="/search" className="navbar-link">
                 Find a Host
               </Link>
+            </li>
+            <li>
+              <button className="navbar-btn" onClick={this.props.logout}>
+                Logout
+              </button>
             </li>
           </ul>
         ) : null}

@@ -1,12 +1,30 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
-import axios from "axios";
 
 class Search extends Component {
+  state = {
+    place: "",
+    date: "",
+    meal: "",
+    seats: ""
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    this.props.updateSearchparams(this.state);
+    this.props.history.push("/results");
+  };
+
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  };
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar logout={this.props.logout} />
         <div className="page-content">
           <div className="content">
             <p>
@@ -14,18 +32,40 @@ class Search extends Component {
               <br />
               curious travelers
             </p>
-            <form>
-              <input type="text" name="city" placeholder="Where to?" />
-              <input type="date" name="date" placeholder="Select your dates" />
-              <input type="text" name="meal" placeholder="Lunch or Dinner?" />
+            <form onSubmit={this.handleSubmit}>
+              <input
+                type="text"
+                name="place"
+                value={this.state.place}
+                onChange={this.handleChange}
+                placeholder="Where to?"
+                required
+              />
+              <input
+                type="date"
+                name="date"
+                value={this.state.date}
+                onChange={this.handleChange}
+                placeholder="Select your dates"
+                required
+              />
+              <input
+                type="text"
+                name="meal"
+                value={this.state.meal}
+                onChange={this.handleChange}
+                placeholder="Lunch or Dinner?"
+                required
+              />
               <input
                 type="number"
-                name="number-of-guests"
+                name="seats"
+                value={this.state.seats}
+                onChange={this.handleChange}
                 placeholder="Number of guests"
+                required
               />
-              <button className="btn" type="submit" name="search">
-                Find a host
-              </button>
+              <button className="btn">Find a host</button>
             </form>
           </div>
         </div>
