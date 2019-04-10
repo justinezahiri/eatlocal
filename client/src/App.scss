@@ -230,11 +230,11 @@ input {
     display: block;
   }
 
-  .dropbtn {
-    background-color: inherit;
-    border-style: none;
-    margin-left: auto;
-  }
+  // .dropbtn {
+  //   background-color: inherit;
+  //   border-style: none;
+  //   margin-left: auto;
+  // }
 
   .navbar-link {
     text-decoration: none;
@@ -243,11 +243,14 @@ input {
     font-size: 16px;
   }
 
-  .navbar-btn {
+  .menu-btn {
     text-decoration: none;
     color: white;
     font-size: 16px;
     font-family: inherit;
+    background-color: inherit;
+    border-style: none;
+    margin-left: auto;
   }
 
   .menu {
@@ -265,16 +268,14 @@ input {
     text-align: center;
     z-index: 1;
 
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+  }
 
-    li {
-      list-style: none;
-      padding: 1em;
-      border-top: 1px white solid;
-    }
-
-    li:hover {
-      background: #e48457e6;
-    }
+  .menu .open {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
@@ -304,7 +305,7 @@ input {
     margin-bottom: 2em;
   }
 
-  input[name="city"],
+  input[name="place"],
   input[type="date"],
   input[name="meal"],
   input[type="number"] {
@@ -314,7 +315,7 @@ input {
     background-size: 1.5em;
   }
 
-  input[name="city"] {
+  input[name="place"] {
     background-image: url("/images/loupicon.svg");
   }
 

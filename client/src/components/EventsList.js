@@ -37,12 +37,16 @@ class EventsList extends Component {
         <div className="content">
           <div className="search-reminder">
             <h3>Your research</h3>
-            <ul>
-              <li className="search-city">{this.props.searchparams.place}</li>
-              <li className="search-date">{this.props.searchparams.date}</li>
-              <li className="search-meal">{this.props.searchparams.meal}</li>
-              <li className="search-guests">{this.props.searchparams.seats}</li>
-            </ul>
+            {this.props.searchparams && (
+              <ul>
+                <li className="search-city">{this.props.searchparams.place}</li>
+                <li className="search-date">{this.props.searchparams.date}</li>
+                <li className="search-meal">{this.props.searchparams.meal}</li>
+                <li className="search-guests">
+                  {this.props.searchparams.seats}
+                </li>
+              </ul>
+            )}
           </div>
 
           <div className="events-list">

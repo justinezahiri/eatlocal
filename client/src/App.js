@@ -43,6 +43,7 @@ class App extends Component {
   logout = event => {
     this.service.logout().then(response => {
       this.updateUser(false);
+      // this.props.history.push("/");
     });
   };
 
