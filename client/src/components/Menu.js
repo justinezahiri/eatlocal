@@ -2,39 +2,48 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 class Menu extends Component {
-  componentDidMount() {
-    const menuEl = document.querySelector(".menu");
-    const openbtnEl = document.querySelector(".openbtn");
-    const closebtnEl = document.querySelector(".closebtn");
+  state = {
+    opened: false
+  };
 
-    openbtnEl.addEventListener("click", function(ev) {
-      menuEl.classList.add("open");
-    });
+  open = event => {
+    this.setState({ opened: true });
+  };
 
-    closebtnEl.addEventListener("click", function(ev) {
-      menuEl.classList.remove("open");
-    });
-  }
+  close = event => {
+    this.setState({ opened: false });
+  };
+
   render() {
     return (
       <div>
-        <button class="openbtn">Menu</button>
-        <div className="menu">
-          <Link to="/register" className="navbar-link">
-            Signup
-          </Link>
+        <button class="openbtn" onClick={this.open}>
+          Menu
+        </button>
+        <div className={`menu ${this.state.opened ? "open" : ""}`}>
+          <div>
+            <Link to="/register" className="menu-link">
+              Signup
+            </Link>
 
-          <Link to="/login" className="navbar-link">
-            Login
-          </Link>
+            <Link to="/login" className="menu-link">
+              Login
+            </Link>
 
-          <Link to="/search" className="navbar-link">
-            Find a Host
-          </Link>
-          <button className="menu-btn" onClick={this.props.logout}>
-            Logout
-          </button>
-          <button class="closebtn">fermer</button>
+            <Link to="/search" className="menu-link">
+              Find a Host
+            </Link>
+            {/* <button className="menu-btn" onClick={this.props.logout}>
+              <img src={"/images/cross.svg"} alt="close" />
+            </button> */}
+            <button className="menu-btn" onClick={this.props.logout}>
+              Logout
+            </button>
+
+            <button className="closebtn" onClick={this.close}>
+              fermer
+            </button>
+          </div>
         </div>
       </div>
     );

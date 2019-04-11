@@ -40,16 +40,19 @@ class Signup extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
     return (
       <div>
-        {/* <Navbar logout={this.props.logout} /> */}
-        <Navbar1 />
+        {" "}
+        {/* <Navbar logout={this.props.logout} /> */}{" "}
+        <Navbar1 logout={this.props.logout} />{" "}
         <div className="page-content">
-          <h1>Signup</h1>
+          <h1> Signup </h1>{" "}
           <div className="content">
             <form onSubmit={this.handleSubmit}>
               <div>
@@ -61,7 +64,7 @@ class Signup extends Component {
                     onChange={this.handleChange}
                     placeholder="Name"
                   />
-                </label>
+                </label>{" "}
                 <label>
                   <input
                     type="password"
@@ -70,7 +73,7 @@ class Signup extends Component {
                     onChange={this.handleChange}
                     placeholder="Password"
                   />
-                </label>
+                </label>{" "}
                 <label>
                   <input
                     type="text"
@@ -79,7 +82,7 @@ class Signup extends Component {
                     onChange={this.handleChange}
                     placeholder="Phone"
                   />
-                </label>
+                </label>{" "}
                 <label>
                   <input
                     type="text"
@@ -88,25 +91,25 @@ class Signup extends Component {
                     onChange={this.handleChange}
                     placeholder="Email"
                   />
-                </label>
-              </div>
+                </label>{" "}
+              </div>{" "}
               <button
                 className="btn"
                 onClick={this.handleSubmit}
                 type="submit"
                 name="create"
               >
-                Create your account
-              </button>
-            </form>
+                Create your account{" "}
+              </button>{" "}
+            </form>{" "}
             <p>
               <small>
                 If you already have an account, you can login from{" "}
-                <Link to="/login">here</Link>
-              </small>
-            </p>
-          </div>
-        </div>
+                <Link to="/login"> here </Link>{" "}
+              </small>{" "}
+            </p>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }

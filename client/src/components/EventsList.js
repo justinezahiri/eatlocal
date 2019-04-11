@@ -1,28 +1,31 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class EventsList extends Component {
   constructor(props) {
     super(props);
-    this.state = { ListOfEvents: [] };
+    this.state = { listOfEvents: [] };
   }
 
   getSelectedEvents = () => {
     axios
       .get(
-        `http://localhost:5000/api/search?place=
-        ${this.props.searchparams.place}
-        &${this.props.searchparams.date}
-        &${this.props.searchparams.meal}
-        &${this.props.searchparams.seats}`
+        `http://localhost:5000/api/search?place=${
+          this.props.searchparams.place
+        }&date=${this.props.searchparams.date}&meal=${
+          this.props.searchparams.meal
+        }&seats=${this.props.searchparams.seats}`,
+        { withCredentials: true }
       )
       .then(responseFromApi => {
         this.setState({
-          ListOfEvents: responseFromApi.data
-        }).catch(err => {
-          console.log(err);
+          listOfEvents: responseFromApi.data
         });
+      })
+      .catch(err => {
+        console.log(err);
       });
   };
 
@@ -51,53 +54,28 @@ class EventsList extends Component {
 
           <div className="events-list">
             <div className="card">
-              {/*
-              {this.state.ListOfEvents.map(event => {
+              {this.state.listOfEvents.map(event => {
                 return (
-                  <div key={event_id}>
-                    <img src={event.image} alt="meal" />
+                  <div key={event._id}>
+                    <Link to={`/eventdetail/${event._id}`}>
+                      <div className="image-cropper">
+                        <img src={event.avatar} alt="host" />
+                      </div>
+                      <img
+                        className="meal-image"
+                        src={event.image}
+                        alt="meal"
+                      />
+                      <div className="event-card">
+                        <h2>{event.name}</h2>
+                        <p>{event.specialities}</p>
+                      </div>
+                    </Link>
                   </div>
                 );
-              })} */}
-              <div className="image-cropper">
-                <img src={"/images/hostplaceholder.png"} alt="host" />
-              </div>
-              <img
-                className="meal-image"
-                src="https://imageresizer.static9.net.au/E3mzajh1nmw-FEX6ifOOldX1v4Q=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2017%2F05%2F02%2F16%2F51%2FBeef-kofta-wrap-with-tahini-sauce-by-Matters-of-the-Belly_2.jpg"
-                alt="meal"
-              />
-              <div className="event-card">
-                <h2>Fatene Tanous</h2>
-                <p>Specialities:Lorem ipsum dolor sit amet</p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus
-                  mi, ut convallis ante.{" "}
-                </p>
-              </div>
+              })}
             </div>
-            <div className="card">
-              <div className="image-cropper">
-                <img src={"/images/hostplaceholder.png"} alt="host" />
-              </div>
-              <img
-                className="meal-image"
-                src="https://imageresizer.static9.net.au/E3mzajh1nmw-FEX6ifOOldX1v4Q=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2017%2F05%2F02%2F16%2F51%2FBeef-kofta-wrap-with-tahini-sauce-by-Matters-of-the-Belly_2.jpg"
-                alt="meal"
-              />
-              <div className="event-card">
-                <h2>Fatene Tanous</h2>
-                <p>Specialities:Lorem ipsum dolor sit amet</p>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  scelerisque arcu ullamcorper, auctor ante ac, sodales velit.
-                  Quisque posuere ac ex vitae facilisis. Etiam sit amet luctus
-                  mi, ut convallis ante.{" "}
-                </p>
-              </div>
-            </div>
+
             <button className="btn">
               <a href="#top">Back to top</a>
             </button>

@@ -9,6 +9,9 @@ class Navbar1 extends Component {
         <Link to="/">
           <img className="logo" src="/images/eatlocalwhite.svg" alt="logo" />
         </Link>
+
+        <Menu logout={this.props.logout} />
+
         <button className="menu-btn">
           <img src={"/images/dropdownicon.svg"} alt="dropdown-icon" />
         </button>

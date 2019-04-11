@@ -3,28 +3,49 @@ import Navbar from "./Navbar.js";
 import axios from "axios";
 
 class EventDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.getSingleEvent();
+  }
+
+  getSingleEvent = () => {
+    axios
+      .get(`/api/events/${this.props._id}`)
+
+      .then(responseFromApi => {
+        const theEvent = responseFromApi.data;
+        this.setState(theEvent);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
   render() {
     return (
       <div>
         <Navbar logout={this.props.logout} />
 
         <div>
-          <img
-            className="meal-image-detail"
-            src="https://imageresizer.static9.net.au/E3mzajh1nmw-FEX6ifOOldX1v4Q=/600x338/smart/http%3A%2F%2Fprod.static9.net.au%2F_%2Fmedia%2F2017%2F05%2F02%2F16%2F51%2FBeef-kofta-wrap-with-tahini-sauce-by-Matters-of-the-Belly_2.jpg"
-            alt="meal"
-          />
+          <div>
+            <img
+              className="meal-image-detail"
+              src={this.state.image}
+              alt="meal"
+            />
+          </div>
+
           <div className="image-cropper">
-            <img src={"/images/hostPlaceholder.png"} alt="host" />
+            <img src={this.state.avatar} alt="host" />
           </div>
         </div>
         <div className="content">
           <div className="host-detail">
-            <h2>Marwan Sam</h2>
-            <p>
-              Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-              lorem ipsum dolor sit amet
-            </p>
+            <h2>{this.state.name}</h2>
+            <p>{this.state.specialities}</p>
           </div>
 
           <div className="map">
@@ -34,7 +55,7 @@ class EventDetail extends Component {
           <div className="specialities-card">
             <img className="menulogo" src={"/images/menu.svg"} alt="menu" />
             <h3 className="specialities">Specialities</h3>
-            <p className="date">Saturday 9 march</p>
+            <p className="date">{this.state.date}</p>
             <img
               className="askicon"
               src={"/images/messageicon.svg"}
@@ -42,25 +63,16 @@ class EventDetail extends Component {
             />
             <div className="event-menu">
               <h4>TO START</h4>
-              <h3 className="menuitem">Fattouch Salad and Mezze</h3>
-              <p className="menudetail">
-                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
-                amet
-              </p>
+              <h3 className="menuitem">{this.state.menu[0]}</h3>
+
               <h4>MAIN COURSE</h4>
-              <h3 className="menuitem">Chich Barak with rice</h3>
-              <p className="menudetail">
-                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
-                amet
-              </p>
+              <h3 className="menuitem">{this.state.menu[1]}</h3>
+
               <h4>TO FINISH</h4>
-              <h3 className="menuitem">Knefe</h3>
-              <p className="menudetail">
-                Specialities:Lorem ipsum dolor sit amet lorem ipsum dolor sit
-                amet
-              </p>
+              <h3 className="menuitem">{this.state.menu[2]}</h3>
             </div>
           </div>
+
           <div className="button-card">
             <div className="join-form">
               <div className="add-guests">

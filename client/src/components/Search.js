@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./Navbar.js";
+import Navbar1 from "./Navbar1.js";
 
 class Search extends Component {
   state = {
@@ -18,20 +18,21 @@ class Search extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    this.setState({ [name]: value });
+    this.setState({
+      [name]: value
+    });
   };
 
   render() {
     return (
       <div>
-        <Navbar logout={this.props.logout} />
+        <Navbar1 logout={this.props.logout} />{" "}
         <div className="page-content">
           <div className="content">
             <p>
-              For food lovers and
-              <br />
-              curious travelers
-            </p>
+              For food lovers and <br />
+              curious travelers{" "}
+            </p>{" "}
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"
@@ -65,10 +66,10 @@ class Search extends Component {
                 placeholder="Number of guests"
                 required
               />
-              <button className="btn">Find a host</button>
-            </form>
-          </div>
-        </div>
+              <button className="btn"> Find a host </button>{" "}
+            </form>{" "}
+          </div>{" "}
+        </div>{" "}
       </div>
     );
   }

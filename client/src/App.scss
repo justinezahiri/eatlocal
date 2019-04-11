@@ -71,6 +71,7 @@ input {
 
   @media (min-width: 900px) {
     display: inline-block;
+    width: 30%;
   }
 }
 
@@ -204,10 +205,8 @@ input {
     margin: 1.5em;
   }
 
-  .btn {
-    // position: fixed;
-    bottom: 0;
-    margin-bottom: 2em;
+  p {
+    margin-top: 0.1em;
   }
 }
 
@@ -230,13 +229,9 @@ input {
     display: block;
   }
 
-  // .dropbtn {
-  //   background-color: inherit;
-  //   border-style: none;
-  //   margin-left: auto;
-  // }
+  .menu-link {
+    display: block;
 
-  .navbar-link {
     text-decoration: none;
     color: white;
     margin: 1em;
@@ -264,16 +259,30 @@ input {
     bottom: 0;
     background-color: $peach;
     padding: 0;
-    margin: 47px 0 0 0;
     text-align: center;
     z-index: 1;
 
     opacity: 0;
     pointer-events: none;
     transition: opacity .3s;
+
+    display: flex;
+    align-items: center;
+
+    >div {
+      width: 100%;
+    }
+
+    .closebtn {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+
   }
 
-  .menu .open {
+  .menu.open {
     opacity: 1;
     pointer-events: auto;
   }
@@ -532,7 +541,6 @@ input {
     flex-direction: column;
 
     .join-form {
-      width: 100%;
       margin: 0 1em;
     }
 

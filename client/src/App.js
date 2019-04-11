@@ -120,7 +120,7 @@ class App extends Component {
                 )}
               />
               {/* <Route exact path="/results" component={EventsList} /> */}
-              <Route exact path="/eventdetail" component={EventDetail} />
+              <Route exact path="/eventdetail/:id" component={EventDetail} />
               <Route exact path="/confirm" component={Confirm} />
               <Route exact path="/sent" component={Sent} />
             </Switch>
