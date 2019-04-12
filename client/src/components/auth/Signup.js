@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-// import Navbar from "../Navbar.js";
-import Navbar1 from "../Navbar1.js";
+import Navbar from "../Navbar.js";
 import AuthService from "./auth-service.js";
 
 class Signup extends Component {
@@ -48,9 +47,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
-        {" "}
-        {/* <Navbar logout={this.props.logout} /> */}{" "}
-        <Navbar1 logout={this.props.logout} />{" "}
+        <Navbar logout={this.props.logout} />
         <div className="page-content">
           <h1> Signup </h1>{" "}
           <div className="content">

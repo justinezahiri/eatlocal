@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar1 from "./Navbar1.js";
+import Navbar from "./Navbar.js";
 
 class Search extends Component {
   state = {
@@ -26,13 +26,13 @@ class Search extends Component {
   render() {
     return (
       <div>
-        <Navbar1 logout={this.props.logout} />{" "}
+        <Navbar logout={this.props.logout} />
         <div className="page-content">
           <div className="content">
             <p>
               For food lovers and <br />
-              curious travelers{" "}
-            </p>{" "}
+              curious travelers
+            </p>
             <form onSubmit={this.handleSubmit}>
               <input
                 type="text"

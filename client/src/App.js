@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.scss";
 
-import { Switch, Route } from "react-router-dom";
+import { withRouter, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/HomePage.js";
 import Signup from "./components/auth/Signup.js";
@@ -43,7 +43,7 @@ class App extends Component {
   logout = event => {
     this.service.logout().then(response => {
       this.updateUser(false);
-      // this.props.history.push("/");
+      this.props.history.push("/");
     });
   };
 
@@ -119,8 +119,15 @@ class App extends Component {
                   />
                 )}
               />
-              {/* <Route exact path="/results" component={EventsList} /> */}
-              <Route exact path="/eventdetail/:id" component={EventDetail} />
+
+              <Route
+                exact
+                path="/eventdetail/:id"
+                render={props => (
+                  <EventDetail logout={this.logout} history={props.history} />
+                )}
+              />
+
               <Route exact path="/confirm" component={Confirm} />
               <Route exact path="/sent" component={Sent} />
             </Switch>
@@ -131,4 +138,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
