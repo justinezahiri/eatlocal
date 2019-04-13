@@ -18,7 +18,8 @@ import Sent from "./components/Sent.js";
 class App extends Component {
   state = {
     user: null,
-    searchparams: null
+    searchparams: null,
+    eventresa: null
   };
 
   service = new AuthService();
@@ -38,6 +39,10 @@ class App extends Component {
 
   updateSearchparams = data => {
     this.setState({ searchparams: data });
+  };
+
+  updateEventResa = data => {
+    this.setState({ eventresa: data });
   };
 
   logout = event => {
@@ -124,12 +129,39 @@ class App extends Component {
                 exact
                 path="/eventdetail/:id"
                 render={props => (
-                  <EventDetail logout={this.logout} history={props.history} />
+                  <EventDetail
+                    logout={this.logout}
+                    history={props.history}
+                    eventid={props.match.params.id}
+                    updateEventResa={this.updateEventResa}
+                  />
                 )}
               />
 
-              <Route exact path="/confirm" component={Confirm} />
-              <Route exact path="/sent" component={Sent} />
+              <Route
+                exact
+                path="/confirm"
+                render={props => (
+                  <Confirm
+                    logout={this.logout}
+                    history={props.history}
+                    eventresa={this.state.eventresa}
+                  />
+                )}
+              />
+
+              <Route
+                exact
+                path="/sent"
+                render={props => (
+                  <Sent
+                    logout={this.logout}
+                    history={props.history}
+                    user={this.state.user}
+                    eventresa={this.state.eventresa}
+                  />
+                )}
+              />
             </Switch>
           </div>
         )}

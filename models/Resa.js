@@ -3,7 +3,10 @@ const Schema = mongoose.Schema;
 
 const resaSchema = new Schema({
   user_id: String,
-  event_id: String,
+  event_id: [{
+    type: Schema.Types.ObjectId,
+    ref: "Event"
+  }],
   seats: Number
 });
 

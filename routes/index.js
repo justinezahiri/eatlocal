@@ -95,6 +95,7 @@ router.get('/profile', (req, res, next) => {
   Resa.find({
       'user_id': req.user._id
     })
+    .populate("event_id")
     .then(bookedEvents => {
       let profile = {
         ...req.user

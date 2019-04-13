@@ -1,7 +1,29 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
+import axios from "axios";
 
 class Profile extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { listOfBookedEvents: [] };
+  }
+
+  getAllEvents = () => {
+    axios
+      .get(`${process.env.REACT_APP_APIURL || ""}/api/profile`, {
+        withCredentials: true
+      })
+      .then(response => {
+        console.log("response api/profile");
+        this.setState({ listOfBookedEvents: response.data.bookedEvents });
+      });
+  };
+
+  componentDidMount() {
+    console.log("ComponentDidMount");
+    this.getAllEvents();
+  }
+
   render() {
     return (
       <div>
@@ -20,27 +42,22 @@ class Profile extends Component {
               </div>
             )}
 
-            <div className="reminder-card">
-              <h2>Your next events</h2>
-              <ul>
-                <li>
-                  Host name: <strong>Marwan Sam</strong>
-                </li>
-                <li className="city">Beyrouth</li>
-                <li className="date">23.04.19</li>
-                <li className="meal">Lunch</li>
-                <li className="guests">3 guests</li>
-              </ul>
-              <ul>
-                <li>
-                  Host name: <strong>Fatene Tannous</strong>
-                </li>
-                <li className="city">Beyrouth</li>
-                <li className="date">23.04.19</li>
-                <li className="meal">Dinner</li>
-                <li className="guests">3 guests</li>
-              </ul>
-            </div>
+            {this.state.listOfBookedEvents.map(event => {
+              return (
+                <div className="reminder-card">
+                  <h2>Your next events</h2>
+                  <ul>
+                    <li>
+                      Host name: <strong>{event.event_id[0].name}</strong>
+                    </li>
+                    <li className="city">{event.event_id[0].place}</li>
+                    <li className="date">{event.event_id[0].date}</li>
+                    <li className="meal">{event.event_id[0].meal}</li>
+                    <li className="guests">{event.event_id[0].seats}</li>
+                  </ul>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

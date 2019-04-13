@@ -228,6 +228,10 @@ input {
     height: 1.3em;
     display: block;
   }
+
+  .menu-nav {
+    margin-left: auto;
+  }
 }
 
 /*
@@ -244,13 +248,13 @@ input {
   text-decoration: none;
   color: white;
   margin: 1em;
-  font-size: 16px;
 }
 
 .menu-btn {
+  font-size: inherit;
+
   text-decoration: none;
   color: white;
-  font-size: 16px;
   font-family: inherit;
   background-color: inherit;
   border-style: none;
@@ -287,6 +291,8 @@ input {
     right: 0;
     top: 0;
   }
+
+  font-size:150%;
 }
 
 .crossicon {
@@ -705,7 +711,7 @@ input {
     list-style: none;
   }
 
-  li.city {
+  li.place {
     list-style-image: url("/images/pinicon.svg");
   }
 

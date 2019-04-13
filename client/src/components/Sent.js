@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import Navbar from "./Navbar.js";
-import axios from "axios";
 
 class Sent extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
+    const { name, date, meal, seats } = this.props.eventresa.event;
+
     return (
       <div className="sent">
         <div>
@@ -21,13 +25,11 @@ class Sent extends Component {
 
             <div className="result">
               <p>
-                Lunch at Marwan Sam
+                {meal} at {name}
                 <br />
-                Saturday 9 March
+                {date}
                 <br />
-                from 1:00 pm to 2:30 pm
-                <br />
-                for 6 guests
+                for {seats} guests
               </p>
             </div>
 
@@ -35,7 +37,7 @@ class Sent extends Component {
               <p>
                 You will be notified by message and email to:
                 <br />
-                marco.dubois@gmail.com
+                {this.props.user.email}
               </p>
             </div>
           </div>

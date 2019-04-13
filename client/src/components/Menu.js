@@ -16,7 +16,7 @@ class Menu extends Component {
 
   render() {
     return (
-      <div>
+      <div className="menu-nav">
         <button className="openbtn" onClick={this.open}>
           <img src={"/images/dropdownicon.svg"} alt="dropdown-icon" />
         </button>
@@ -30,9 +30,14 @@ class Menu extends Component {
               Login
             </Link>
 
+            <Link to="/profile" className="menu-link">
+              Your profile
+            </Link>
+
             <Link to="/search" className="menu-link">
               Find a Host
             </Link>
+
             <button className="menu-btn" onClick={this.props.logout}>
               Logout
             </button>
