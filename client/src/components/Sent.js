@@ -32,14 +32,15 @@ class Sent extends Component {
                 for {seats} guests
               </p>
             </div>
-
-            <div className="email">
-              <p>
-                You will be notified by message and email to:
-                <br />
-                {this.props.user.email}
-              </p>
-            </div>
+            {this.props.user && (
+              <div className="email">
+                <p>
+                  You will be notified by message and email to:
+                  <br />
+                  {this.props.user.email}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

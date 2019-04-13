@@ -24,7 +24,9 @@ class EventDetail extends Component {
 
   getSingleEvent = () => {
     axios
-      .get(`http://localhost:5000/api/events/${this.props.eventid}`)
+      .get(
+        `${process.env.REACT_APP_APIURL || ""}/api/events/${this.props.eventid}`
+      )
 
       .then(responseFromApi => {
         const theEvent = responseFromApi.data;
@@ -60,6 +62,7 @@ class EventDetail extends Component {
               <div className="map">
                 <img src={"/images/mapplaceholder.svg"} alt="map" />
               </div>
+
               <div className="specialities-card">
                 <img className="menulogo" src={"/images/menu.svg"} alt="menu" />
                 <h3 className="specialities">Specialities</h3>
@@ -79,9 +82,9 @@ class EventDetail extends Component {
                 </div>
               </div>
 
-              <div className="button-card">
-                <div className="join-form">
-                  {/* <div className="add-guests">
+              {/* <div className="button-card">
+                <div className="join-form"> */}
+              {/* <div className="add-guests">
                     <img src={"/images/travelersicon.svg"} alt="travelers" />
                     <button>
                       <img src={"/images/addicon.svg"} alt="add" />
@@ -92,18 +95,11 @@ class EventDetail extends Component {
                     </button>
                   </div>
                   <hr /> */}
-                  <button className="join-btn" onClick={this.handleClick}>
-                    Ask to join
-                    {/* <Link
-                      className="btn"
-                      to="/confirm"
-                      style={{ textDecoration: "none" }}
-                    >
-                      Ask to join
-                    </Link> */}
-                  </button>
-                </div>
-              </div>
+              <button className="btn" onClick={this.handleClick}>
+                Ask to join
+              </button>
+              {/* </div>
+              </div> */}
             </div>
           </div>
         )}

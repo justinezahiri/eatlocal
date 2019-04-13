@@ -43,11 +43,11 @@ class Menu extends Component {
             </button>
 
             <button className="closebtn" onClick={this.close}>
-              <img
+              {/* <img
                 className="crossicon"
                 src={"/images/cross.svg"}
                 alt="close"
-              />
+              /> */}
             </button>
           </div>
         </div>

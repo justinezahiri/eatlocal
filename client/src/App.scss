@@ -59,9 +59,11 @@ input {
   background-color: $peach;
   color: white;
   font-weight: bold;
-  font-size: 14px;
+  // font-size: 14px;
+  font-size: 1em;
   border-radius: 1000000px;
-  padding: 16px 32px;
+  // padding: 16px 32px;
+  padding: 6%;
   text-align: center;
   border-style: none;
   display: block;
@@ -290,13 +292,10 @@ input {
     position: absolute;
     right: 0;
     top: 0;
+    background-image: url("/images/cross.svg");
   }
 
   font-size:150%;
-}
-
-.crossicon {
-  width: 2em;
 }
 
 .menu.open {
@@ -452,7 +451,7 @@ input {
 ███████╗ ╚████╔╝ ███████╗██║ ╚████║   ██║       ██████╔╝███████╗   ██║   ██║  ██║██║███████╗
 ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═══╝   ╚═╝       ╚═════╝ ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚══════╝
 */
-[data-route="/eventdetail"] {
+[data-route^="/eventdetail"] {
   min-height: 100vh;
   overflow: hidden;
   text-align: center;

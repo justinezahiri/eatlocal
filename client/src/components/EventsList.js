@@ -12,7 +12,7 @@ class EventsList extends Component {
   getSelectedEvents = () => {
     axios
       .get(
-        `http://localhost:5000/api/search?place=${
+        `${process.env.REACT_APP_APIURL || ""}/api/search?place=${
           this.props.searchparams.place
         }&date=${this.props.searchparams.date}&meal=${
           this.props.searchparams.meal
