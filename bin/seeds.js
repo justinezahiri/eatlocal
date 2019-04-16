@@ -2,6 +2,9 @@
 
 // To execute this seed, run from the root of the project
 // $ node bin/seeds.js
+require('dotenv').config({
+  path: require('path').resolve(__dirname, '../.env')
+});
 
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
@@ -10,7 +13,7 @@ const bcryptSalt = 10;
 const Event = require("../models/Event");
 
 mongoose
-  .connect('mongodb://localhost/eatlocal', {
+  .connect(process.env.MONGODB_URI, {
     useNewUrlParser: true
   })
   .then(x => {
@@ -20,15 +23,15 @@ mongoose
     console.error('Error connecting to mongo', err)
   });
 
-// let users = [{
-//     username: "alice",
-//     password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
-//   },
-//   {
-//     username: "bob",
-//     password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
-//   }
-// ]
+let users = [{
+    username: "alice",
+    password: bcrypt.hashSync("alice", bcrypt.genSaltSync(bcryptSalt)),
+  },
+  {
+    username: "bob",
+    password: bcrypt.hashSync("bob", bcrypt.genSaltSync(bcryptSalt)),
+  }
+]
 
 let events = [{
     date: new Date("2019-04-07"),
