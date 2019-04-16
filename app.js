@@ -49,7 +49,7 @@ app.use(require('node-sass-middleware')({
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
-app.use(express.static(path.join(__dirname, 'client/build')));
+//app.use(express.static(path.join(__dirname, 'client/build')));
 //app.use(favicon(path.join(__dirname, 'client/build/favicon.ico')));
 
 
@@ -92,6 +92,19 @@ app.use('/api', index);
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 
+//
+// AFTER nos routes
+//
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+// 404 => serve React SPA
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, 'client/build/index.html'), function (err) {
+    if (err) {
+      res.status(500).send(err)
+    }
+  })
+});
 
 
 
