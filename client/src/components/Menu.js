@@ -17,9 +17,9 @@ class Menu extends Component {
   render() {
     return (
       <div className="menu-nav">
-        <button className="openbtn" onClick={this.open}>
+        <div className="openbtn" onClick={this.open}>
           <img src={"/images/dropdownicon.svg"} alt="dropdown-icon" />
-        </button>
+        </div>
         <div className={`menu ${this.state.opened ? "open" : ""}`}>
           <div>
             <Link to="/register" className="menu-link">
@@ -42,13 +42,13 @@ class Menu extends Component {
               Logout
             </button>
 
-            <button className="closebtn" onClick={this.close}>
+            <div className="closebtn" onClick={this.close}>
               {/* <img
                 className="crossicon"
                 src={"/images/cross.svg"}
                 alt="close"
               /> */}
-            </button>
+            </div>
           </div>
         </div>
       </div>

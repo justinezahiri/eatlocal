@@ -60,7 +60,7 @@ input {
   color: white;
   font-weight: bold;
   // font-size: 14px;
-  font-size: 1em;
+  font-size: 0.9em;
   border-radius: 1000000px;
   // padding: 16px 32px;
   padding: 6%;
@@ -289,14 +289,26 @@ input {
   }
 
   .closebtn {
+    height: 1em;
+
     position: absolute;
     right: 0;
     top: 0;
-    background-image: url("/images/cross.svg");
+    background: url("/images/cross.svg") center no-repeat;
+    background-size: contain;
+
+    margin: .5em;
   }
 
   font-size:150%;
 }
+
+.openbtn,
+.closebtn {
+  width: 3rem;
+}
+
+.openbtn {}
 
 .menu.open {
   opacity: 1;
