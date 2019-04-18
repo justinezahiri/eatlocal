@@ -13,6 +13,10 @@ class EventMap extends Component {
     };
   }
 
+  componentDidMount() {
+    this.addressToGeoCoordinates(this.props.address);
+  }
+
   addressToGeoCoordinates = address => {
     const url = `${process.env.REACT_APP_APIURL ||
       ""}/api/geocoder?address=${encodeURIComponent(address)}`;
@@ -30,11 +34,10 @@ class EventMap extends Component {
   };
 
   render() {
-    this.addressToGeoCoordinates(this.props.address);
     const position = [this.state.lat, this.state.lng];
 
     return (
-      <div>
+      <div className="EventMap">
         <Map
           center={position}
           zoom={this.state.zoom}

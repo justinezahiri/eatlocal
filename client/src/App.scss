@@ -599,6 +599,10 @@ input {
 */
 .EventMap {
   height: 16em;
+
+  .leaflet-container {
+    height: 100%;
+  }
 }
 
 /*
