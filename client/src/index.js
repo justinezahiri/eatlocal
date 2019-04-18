@@ -5,6 +5,8 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import ScrollToTop from "./ScrollToTop.js";
 
+import "leaflet/dist/leaflet.css";
+
 import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(

@@ -53,9 +53,9 @@ class EventsList extends Component {
           </div>
 
           <div className="events-list">
-            <div className="card">
-              {this.state.listOfEvents.map(event => {
-                return (
+            {this.state.listOfEvents.map(event => {
+              return (
+                <div className="card">
                   <div key={event._id}>
                     <Link to={`/eventdetail/${event._id}`}>
                       <div className="image-cropper">
@@ -72,9 +72,9 @@ class EventsList extends Component {
                       </div>
                     </Link>
                   </div>
-                );
-              })}
-            </div>
+                </div>
+              );
+            })}
 
             <button className="btn">
               <a href="#top">Back to top</a>

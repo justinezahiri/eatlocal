@@ -113,50 +113,6 @@ router.get("/loggedin", (req, res, next) => {
   });
 });
 
-// //CLOUDINARY UPLOADER
-// const uploader = require('../cloudinary.js');
-// router.post("/upload", uploader.single("photo"), (req, res, next) => {
-//   // Check user is logged in
-//   if (!req.isAuthenticated()) {
-//     res.status(401).json({
-//       message: "You need to be logged in to upload your avatar"
-//     });
-//     return;
-//   }
 
-//   // Check a file has been provided
-//   if (!req.file) {
-//     res.status(400).json({
-//       message: "No file uploaded!"
-//     });
-//     return;
-//   }
-
-//   // Updating user's `image`
-//   req.user.image = req.file.secure_url;
-
-//   // Validating user before saving
-//   req.user.validate(function (error) {
-//     if (error) {
-//       res.status(400).json({
-//         message: error.errors
-//       });
-//       return;
-//     }
-
-//     // Validation ok, let save it
-//     req.user.save(function (err) {
-//       if (err) {
-//         res.status(500).json({
-//           message: 'Error while saving user into DB.'
-//         });
-//         return;
-//       }
-
-//       res.status(200).json(req.user);
-//     })
-//   });
-
-// });
 
 module.exports = router;

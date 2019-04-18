@@ -308,8 +308,6 @@ input {
   width: 3.2rem;
 }
 
-.openbtn {}
-
 .menu.open {
   opacity: 1;
   pointer-events: auto;
@@ -502,17 +500,22 @@ input {
   }
 
   .map {
-    width: 100%;
-    margin-bottom: 0.5em;
+    // width: 100%;
+    // margin-bottom: 0.5em;
   }
 
   .specialities-card {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // width: fit-content;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     // margin: auto;
     // position: relative;
+
+    width: -webkit-fill-available;
+    margin-left: auto;
+    margin-right: auto;
+
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.12);
     background-color: #ffffff;
@@ -539,6 +542,7 @@ input {
     .event-menu {
       text-align: left;
       margin: 0 1em;
+      margin-bottom: 1em;
     }
 
     .menuitem {
@@ -583,6 +587,18 @@ input {
       margin: 0.2 0.5em;
     }
   }
+}
+
+/*
+███╗   ███╗ █████╗ ██████╗ 
+████╗ ████║██╔══██╗██╔══██╗
+██╔████╔██║███████║██████╔╝
+██║╚██╔╝██║██╔══██║██╔═══╝ 
+██║ ╚═╝ ██║██║  ██║██║     
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
+*/
+.EventMap {
+  height: 16em;
 }
 
 /*
@@ -739,4 +755,16 @@ input {
   li.guests {
     list-style-image: url("/images/travelersicon.svg");
   }
+}
+
+/*
+███╗   ███╗ █████╗ ██████╗ 
+████╗ ████║██╔══██╗██╔══██╗
+██╔████╔██║███████║██████╔╝
+██║╚██╔╝██║██╔══██║██╔═══╝ 
+██║ ╚═╝ ██║██║  ██║██║     
+╚═╝     ╚═╝╚═╝  ╚═╝╚═╝     
+*/
+.EventMap {
+  height: 16em;
 }

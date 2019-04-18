@@ -5,9 +5,20 @@ const mongoose = require('mongoose');
 const Resa = require('../models/Resa');
 const User = require('../models/User');
 
+const axios = require('axios');
+
 /* GET home page */
-router.get('/', (req, res, next) => {
-  res.render('index');
+router.get('/geocoder', (req, res, next) => {
+  const address = req.query.address
+  const url = `http://open.mapquestapi.com/geocoding/v1/address?key=${process.env.geocodingAPIKEY}&location=${encodeURIComponent(address)}`;
+
+  axios.get(url).then(response => {
+    res.json(response.data.results[0].locations[0].latLng);
+  }).catch(err => {
+    res.status(500).json({
+      message: err
+    });
+  });
 });
 
 //GET results page according to search

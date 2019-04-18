@@ -5,9 +5,10 @@ const eventSchema = new Schema({
   date: Date,
   meal: {
     type: String,
-    enum: ['lunch', 'dinner']
+    enum: ['Lunch', 'Dinner']
   },
   place: String,
+  address: String,
   seats: Number,
   name: String,
   specialities: String,

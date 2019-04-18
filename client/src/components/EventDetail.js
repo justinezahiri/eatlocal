@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import Navbar from "./Navbar.js";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+// import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+import EventMap from "./EventMap.js";
 
 class EventDetail extends Component {
   constructor(props) {
@@ -30,6 +33,8 @@ class EventDetail extends Component {
 
       .then(responseFromApi => {
         const theEvent = responseFromApi.data;
+        theEvent.date = new Date(theEvent.date);
+        theEvent.date = theEvent.date.toLocaleDateString();
         this.setState({ event: theEvent });
       })
       .catch(err => {
@@ -57,11 +62,14 @@ class EventDetail extends Component {
             <div className="content">
               <div className="host-detail">
                 <h2>{this.state.event.name}</h2>
+                <p>{this.state.event.address}</p>
                 <p>{this.state.event.specialities}</p>
               </div>
-              <div className="map">
+              {/* <div className="map">
                 <img src={"/images/mapplaceholder.svg"} alt="map" />
-              </div>
+              </div> */}
+
+              <EventMap address={this.state.event.address} />
 
               <div className="specialities-card">
                 <img className="menulogo" src={"/images/menu.svg"} alt="menu" />
@@ -82,24 +90,9 @@ class EventDetail extends Component {
                 </div>
               </div>
 
-              {/* <div className="button-card">
-                <div className="join-form"> */}
-              {/* <div className="add-guests">
-                    <img src={"/images/travelersicon.svg"} alt="travelers" />
-                    <button>
-                      <img src={"/images/addicon.svg"} alt="add" />
-                    </button>
-                    <h4>3</h4>
-                    <button>
-                      <img src={"/images/removeicon.svg"} alt="add" />
-                    </button>
-                  </div>
-                  <hr /> */}
               <button className="btn" onClick={this.handleClick}>
                 Ask to join
               </button>
-              {/* </div>
-              </div> */}
             </div>
           </div>
         )}
