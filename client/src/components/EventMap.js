@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Map, Marker, TileLayer } from "react-leaflet";
+import L from "leaflet";
 
 class EventMap extends Component {
   constructor(props) {
@@ -36,6 +37,16 @@ class EventMap extends Component {
   render() {
     const position = [this.state.lat, this.state.lng];
 
+    let icon = L.icon({
+      iconUrl: "/images/pinblue.svg",
+      iconSize: [38, 95]
+      //iconAnchor: [22, 94]
+      // popupAnchor: [-3, -76],
+      // shadowUrl: 'my-icon-shadow.png',
+      // shadowSize: [68, 95],
+      // shadowAnchor: [22, 94]
+    });
+
     return (
       <div className="EventMap">
         <Map
@@ -49,7 +60,7 @@ class EventMap extends Component {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
             url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png"
           />
-          <Marker position={position} />
+          <Marker position={position} icon={icon} />
         </Map>
       </div>
     );

@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Navbar from "./Navbar.js";
 import axios from "axios";
 import { Link } from "react-router-dom";
-// import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-// import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import EventMap from "./EventMap.js";
 
 class EventDetail extends Component {
