@@ -8,6 +8,10 @@ const User = require('../models/User');
 const axios = require('axios');
 
 /* GET home page */
+router.get('/', (req, res, next) => {
+  res.render('index');
+});
+
 router.get('/geocoder', (req, res, next) => {
   const address = req.query.address
   const url = `http://open.mapquestapi.com/geocoding/v1/address?key=${process.env.geocodingAPIKEY}&location=${encodeURIComponent(address)}`;
