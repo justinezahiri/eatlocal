@@ -33,7 +33,7 @@ class Search extends Component {
         <Navbar logout={this.props.logout} />
         <div className="page-content">
           <div className="content">
-            <p>
+            <p className="between3font">
               For food lovers and <br />
               curious travelers
             </p>

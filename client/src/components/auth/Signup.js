@@ -36,7 +36,7 @@ class Signup extends Component {
         this.props.history.push("/search");
       })
       .catch(error => {
-        console.log(error.response);
+        console.log(error.response.data.message);
         this.setState({ error: error.response.data.message });
       });
   };
@@ -49,6 +49,7 @@ class Signup extends Component {
   };
 
   render() {
+    const error = this.state.error;
     return (
       <div>
         <Navbar logout={this.props.logout} />
@@ -56,7 +57,7 @@ class Signup extends Component {
           <h1> Signup </h1>{" "}
           <div className="content">
             <form onSubmit={this.handleSubmit}>
-              {/* {error && <p className="error">{this.state.error}</p>} */}
+              {error && <p className="error">{this.state.error}</p>}
               <div>
                 <label>
                   <input
