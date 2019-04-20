@@ -13,8 +13,16 @@ class Profile extends Component {
       .get(`${process.env.REACT_APP_APIURL || ""}/api/profile`, {
         withCredentials: true
       })
+
       .then(response => {
-        console.log("response api/profile");
+        console.log(response);
+
+        for (var i = 0; i < response.data.bookedEvents.length; i++) {
+          const bookedEvent = response.data.bookedEvents[i].event_id[0];
+          bookedEvent.date = new Date(bookedEvent.date);
+          bookedEvent.date = bookedEvent.date.toLocaleDateString();
+        }
+
         this.setState({ listOfBookedEvents: response.data.bookedEvents });
       });
   };

@@ -53,6 +53,7 @@ class EventDetail extends Component {
                 src={this.state.event.image}
                 alt="meal"
               />
+              <div className="arcshape" />
             </div>
             <div className="image-cropper">
               <img src={this.state.event.avatar} alt="host" />

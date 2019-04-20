@@ -303,6 +303,10 @@ input {
   font-size:150%;
 }
 
+.openbtn {
+  text-align: center;
+}
+
 .openbtn,
 .closebtn {
   width: 3.2rem;
@@ -468,9 +472,24 @@ input {
   overflow: hidden;
   text-align: center;
 
+  .event-meal-img {
+    height: 20em;
+    position: relative;
+  }
+
+  .arcshape {
+    background-image: url("/images/arc-shape.svg");
+    background-repeat: no-repeat;
+    position: absolute;
+    height: 5.6em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
   .meal-image-detail {
-    width: fit-content;
-    height: 276px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -502,6 +521,11 @@ input {
   .map {
     // width: 100%;
     // margin-bottom: 0.5em;
+  }
+
+  .theevent {
+    position: relative;
+    z-index: 0;
   }
 
   .specialities-card {
