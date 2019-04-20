@@ -39,7 +39,6 @@ router.get('/search', (req, res, next) => {
       messsage: "please add a place"
     })
   }
-  //TODO: validate date format 
   if (!("date" in req.query)) {
     res.status(400).json({
       messsage: "please add a date"

@@ -8,7 +8,8 @@ class Signup extends Component {
     username: "",
     password: "",
     email: "",
-    phone: ""
+    phone: "",
+    error: false
   };
 
   service = new AuthService();
@@ -34,7 +35,10 @@ class Signup extends Component {
         this.props.updateUser(response.data);
         this.props.history.push("/search");
       })
-      .catch(error => console.log(error));
+      .catch(error => {
+        console.log(error.response);
+        this.setState({ error: error.response.data.message });
+      });
   };
 
   handleChange = event => {
@@ -52,6 +56,7 @@ class Signup extends Component {
           <h1> Signup </h1>{" "}
           <div className="content">
             <form onSubmit={this.handleSubmit}>
+              {/* {error && <p className="error">{this.state.error}</p>} */}
               <div>
                 <label>
                   <input
@@ -84,6 +89,7 @@ class Signup extends Component {
                   <input
                     type="text"
                     name="email"
+                    id="mail"
                     value={this.state.email}
                     onChange={this.handleChange}
                     placeholder="Email"

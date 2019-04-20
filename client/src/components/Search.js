@@ -6,11 +6,15 @@ class Search extends Component {
     place: "",
     date: "",
     meal: "",
-    seats: ""
+    seats: "",
+    errPlace: null
   };
 
   handleSubmit = event => {
     event.preventDefault();
+    if (this.state.place === "") {
+      this.setState({ errPlace: "Please, fill the place" });
+    }
 
     this.props.updateSearchparams(this.state);
     this.props.history.push("/results");

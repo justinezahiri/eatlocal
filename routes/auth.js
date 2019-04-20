@@ -15,6 +15,15 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
+  const username = req.body.username;
+  const password = req.body.password;
+
+  if (!username || !password) {
+    return res.status(400).json({
+      message: "Please complete all the fields."
+    })
+  }
+
   passport.authenticate("local", (err, theUser, failureDetails) => {
     if (err) {
       res.status(500).json({

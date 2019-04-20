@@ -6,7 +6,8 @@ import AuthService from "./auth-service.js";
 class Login extends Component {
   state = {
     username: "",
-    password: ""
+    password: "",
+    error: false
   };
 
   service = new AuthService();
@@ -19,6 +20,9 @@ class Login extends Component {
       .then(response => {
         this.props.updateUser(response);
         this.props.history.push("/search");
+      })
+      .catch(error => {
+        this.setState({ error: error.response.data.message });
       });
   };
 
@@ -28,6 +32,8 @@ class Login extends Component {
   };
 
   render() {
+    const error = this.state.error;
+
     return (
       <div>
         <Navbar logout={this.props.logout} />
@@ -35,6 +41,8 @@ class Login extends Component {
           <h1>Login</h1>
           <div className="content">
             <form onSubmit={this.handleSubmit}>
+              {error && <p className="error">{this.state.error}</p>}
+
               <div>
                 <label>
                   <input

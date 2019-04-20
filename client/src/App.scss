@@ -72,7 +72,7 @@ input {
   margin-bottom: 0.5em;
 
   @media (min-width: 900px) {
-    display: inline-block;
+    padding: 2.5%;
     width: 30%;
   }
 }
@@ -187,6 +187,26 @@ input {
   .container {
     margin-top: 12em;
   }
+
+  @media (min-width: 900px) {
+    .content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+    .container {
+      padding-top: 6.2em;
+    }
+
+    .btn {
+      padding: 1.9%;
+    }
+  }
+}
+
+.error {
+  color: red;
 }
 
 /*
@@ -481,10 +501,13 @@ input {
     background-image: url("/images/arc-shape.svg");
     background-repeat: no-repeat;
     position: absolute;
-    height: 5.6em;
+    height: 100%;
     left: 0;
     right: 0;
     bottom: 0;
+    bottom: -1px;
+    background-position: center bottom;
+    background-size: 100% auto;
   }
 
   .meal-image-detail {
@@ -494,7 +517,7 @@ input {
   }
 
   .image-cropper {
-    transform: translate(60px, 240px);
+    transform: translate(52px, 245px);
     left: 50%;
     top: 0;
     position: absolute;
@@ -648,6 +671,7 @@ input {
     background-color: #5ba3b1;
     border-radius: 10px;
     box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.3);
+    margin-top: 2em;
   }
 
   .content {
