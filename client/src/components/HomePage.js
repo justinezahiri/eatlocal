@@ -7,7 +7,7 @@ class HomePage extends React.Component {
       <div className="homepage">
         <div className="container">
           <img src={"/images/eatlocalblue.svg"} alt="logo" />
-          <p>
+          <p className="between3font">
             You are what you eat
             <br />
             You are who you meet

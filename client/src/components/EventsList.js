@@ -39,7 +39,7 @@ class EventsList extends Component {
         <Navbar logout={this.props.logout} />
         <div className="content">
           <div className="search-reminder">
-            <h3>Your research</h3>
+            <h3 className="between3font">Your research</h3>
             {this.props.searchparams && (
               <ul>
                 <li className="search-city">{this.props.searchparams.place}</li>
@@ -67,7 +67,7 @@ class EventsList extends Component {
                         alt="meal"
                       />
                       <div className="event-card">
-                        <h2>{event.name}</h2>
+                        <h2 className="between3font">{event.name}</h2>
                         <p>{event.specialities}</p>
                       </div>
                     </Link>

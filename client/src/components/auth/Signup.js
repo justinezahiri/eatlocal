@@ -54,7 +54,7 @@ class Signup extends Component {
       <div>
         <Navbar logout={this.props.logout} />
         <div className="page-content">
-          <h1> Signup </h1>{" "}
+          <h1 className="between3font"> Signup </h1>{" "}
           <div className="content">
             <form onSubmit={this.handleSubmit}>
               {error && <p className="error">{this.state.error}</p>}

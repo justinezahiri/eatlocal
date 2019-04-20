@@ -10,6 +10,26 @@
   outline: none;
 }
 
+@font-face {
+  font-family: 'between3';
+  src:
+    url("/fonts/between3/Between3-Regular.woff2") format("woff2"),
+    url("/fonts/between3/Between3-Regular.woff") format("woff"),
+    url("/fonts/between3/Between3-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'between3';
+  src:
+    url("/fonts/between3/Between3-Bold.woff2") format("woff2"),
+    url("/fonts/between3/Between3-Bold.woff") format("woff"),
+    url("/fonts/between3/Between3-Bold.otf");
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto Condensed', sans-serif;

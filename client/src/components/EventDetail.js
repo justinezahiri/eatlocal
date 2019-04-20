@@ -60,7 +60,7 @@ class EventDetail extends Component {
             </div>
             <div className="content">
               <div className="host-detail">
-                <h2>{this.state.event.name}</h2>
+                <h2 className="between3font">{this.state.event.name}</h2>
                 <p>{this.state.event.address}</p>
                 <p>{this.state.event.specialities}</p>
               </div>
@@ -72,7 +72,7 @@ class EventDetail extends Component {
 
               <div className="specialities-card">
                 <img className="menulogo" src={"/images/menu.svg"} alt="menu" />
-                <h3 className="specialities">Specialities</h3>
+                <h3 className="specialities between3font">Specialities</h3>
                 <p className="date">{this.state.event.date}</p>
                 <img
                   className="askicon"
@@ -81,11 +81,17 @@ class EventDetail extends Component {
                 />
                 <div className="event-menu">
                   <h4>TO START</h4>
-                  <h3 className="menuitem">{this.state.event.menu[0]}</h3>
+                  <h3 className="menuitem between3font">
+                    {this.state.event.menu[0]}
+                  </h3>
                   <h4>MAIN COURSE</h4>
-                  <h3 className="menuitem">{this.state.event.menu[1]}</h3>
+                  <h3 className="menuitem between3font">
+                    {this.state.event.menu[1]}
+                  </h3>
                   <h4>TO FINISH</h4>
-                  <h3 className="menuitem">{this.state.event.menu[2]}</h3>
+                  <h3 className="menuitem between3font">
+                    {this.state.event.menu[2]}
+                  </h3>
                 </div>
               </div>
 

@@ -1,10 +1,5 @@
 .between3font {
-  @font-face {
-    font-family: "Between 3 Bold";
-    src: url("/Between3-Bold-export/Between3-Bold.woff2") format("woff2"), url("/Between3-Bold-export/Between3-Bold.woff") format("woff"), url("/Between3-Bold-export/Between3-Bold.otf") format("opentype");
-    font-style: normal;
-    font-weight: 400;
-  }
+  font-family: 'between3'
 }
 
 /*
@@ -189,8 +184,8 @@ input {
 
   p {
     margin-bottom: 3em;
-    margin-top: 2em;
-    font-size: 20px;
+    margin-top: 2.7em;
+    font-size: 19px;
   }
 
   .container {
@@ -604,6 +599,7 @@ input {
     .menuitem {
       margin-top: 0.2em;
       margin-bottom: 0.2em;
+      font-size: 1em;
     }
 
     h4 {
