@@ -22,20 +22,11 @@ class Menu extends Component {
         </div>
         <div className={`menu ${this.state.opened ? "open" : ""}`}>
           <div>
-            <Link to="/register" className="menu-link">
-              Signup
-            </Link>
-
-            <Link to="/login" className="menu-link">
-              Login
-            </Link>
-
-            <Link to="/profile" className="menu-link">
-              Your profile
-            </Link>
-
             <Link to="/search" className="menu-link">
               Find a Host
+            </Link>
+            <Link to="/profile" className="menu-link">
+              Your profile
             </Link>
 
             <button className="menu-btn" onClick={this.props.logout}>

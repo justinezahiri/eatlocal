@@ -63,8 +63,8 @@ input {
   background-color: $peach;
   color: white;
   font-weight: bold;
-  // font-size: 14px;
-  font-size: 0.9em;
+  font-size: 14px;
+  //font-size: 0.9em;
   border-radius: 1000000px;
   // padding: 16px 32px;
   padding: 6%;
@@ -179,6 +179,9 @@ input {
 
   .btn {
     background-color: rgba(253, 156, 110, 0.9);
+    font-size: 19px;
+    font-weight: normal;
+    height: 3em;
     margin-bottom: 1em;
   }
 
@@ -273,7 +276,7 @@ input {
   display: block;
   text-decoration: none;
   color: white;
-  margin: 1em;
+  margin: 1.3em;
 }
 
 .menu-btn {
@@ -480,6 +483,12 @@ input {
     border-top-right-radius: 10px;
     width: 100%;
     object-fit: cover;
+  }
+
+  .loader {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 5em;
   }
 }
 

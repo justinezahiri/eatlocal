@@ -6,15 +6,11 @@ class Search extends Component {
     place: "",
     date: "",
     meal: "",
-    seats: "",
-    errPlace: null
+    seats: ""
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.place === "") {
-      this.setState({ errPlace: "Please, fill the place" });
-    }
 
     this.props.updateSearchparams(this.state);
     this.props.history.push("/results");
@@ -62,6 +58,16 @@ class Search extends Component {
                 placeholder="Lunch or Dinner?"
                 required
               />
+              {/* <select
+                value={this.state.meal}
+                onChange={this.handleChange}
+                className="form-control"
+                name="meal"
+              >
+                <option value="select">Lunch or Dinner?</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Dinner">Dinner</option>
+              </select> */}
               <input
                 type="number"
                 name="seats"
