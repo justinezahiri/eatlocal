@@ -64,9 +64,6 @@ class EventDetail extends Component {
                 <p>{this.state.event.address}</p>
                 <p>{this.state.event.specialities}</p>
               </div>
-              {/* <div className="map">
-                <img src={"/images/mapplaceholder.svg"} alt="map" />
-              </div> */}
 
               <EventMap address={this.state.event.address} />
 
