@@ -1,4 +1,4 @@
-## Eatlocal
+# Eatlocal
 
 Eatlocal, for food lovers and curious travelers.  
 An App to find a host to taste authentic local food.  
