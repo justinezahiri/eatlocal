@@ -2,7 +2,7 @@
 
 Eatlocal, for food lovers and curious travelers.  
 An App to find a host to taste authentic local food.  
-Final project of Ironhack web development bootcamp (April 2019).
+Final project of Ironhack web development bootcamp (April 2019).  
 Stack: MERN.
 
 You can find a first working version at: https://eatlocal.herokuapp.com/   
