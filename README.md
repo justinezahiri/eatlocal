@@ -6,7 +6,7 @@ Final project of Ironhack web development bootcamp (April 2019).
 Stack: MERN.
 
 You can find a first working version at: https://eatlocal.herokuapp.com/  
-We implemented it "mobile first", so change for iphone 5/SE view to have the better experience.  
+We've implemented it "mobile first", so change for iphone 5/SE view to have the better experience.  
 In this first working version you can search only for:
 
 - Paris, 2019/05/07, Lunch, 2 guests.
